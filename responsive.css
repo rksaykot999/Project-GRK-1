@@ -1,0 +1,51 @@
+@media screen and (max-width:768px) {
+    .navbar {
+        margin: 5px;
+        flex-direction: column;
+    }
+
+    .navbar h3 {
+        display: none;
+    }
+
+    .nav-element {
+        padding-left: 0;
+    }
+
+    .navbar ul {
+        gap: 5px;
+    }
+
+    .navbar .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        margin-top: 10px;
+    }
+
+    .nav-buttons h3 {
+        display: inline;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar{
+        margin: 10px 50px;
+    }
+    .nav-buttons h3 {
+        display: none;
+    }
+
+    .nav-buttons h3 {
+        display: none;
+    }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  .navbar{
+        margin: 5px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  
+}

@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .navbar {
     background: linear-gradient(to right, orange, rgb(255, 138, 71));
     display: flex;
-    margin: 0 250px;
-    padding: 0 30px;
+    margin: 10px 200px;
+    padding: 10px 10px;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
 }
 
-.navbar ul {
+.nav-element {
     list-style: none;
     display: flex;
     gap: 30px;
@@ -26,6 +32,10 @@
     padding: 10px;
 }
 
+.nav-buttons h3 {
+    display: none;
+}
+
 .btn-primary {
     font-family: "Lato", sans-serif;
     background-color: #f03e73;
@@ -34,7 +44,7 @@
     font-weight: bold;
     border-radius: 10px;
     color: white;
-    
+
 }
 
 .btn-secondary {
@@ -46,15 +56,21 @@
     color: white;
     border-radius: 10px;
 }
+
 .btn-primary:hover {
     background-color: #f76d97;
     transition: background-color 0.2s;
     cursor: pointer;
 }
+
 .btn-secondary:hover {
     background-color: rgb(243, 122, 101);
     transition: background-color 0.2s;
     cursor: pointer;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
 }
 .navbar ul li:hover {
     background: none;
