@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - GRK Project</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.8s ease-out',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: 0 },
+                            '100%': { transform: 'translateY(0)', opacity: 1 },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'manrope': ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .content-section {
+            scroll-margin-top: 100px;
+        }
+        
+        .terms-nav a.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        .dark .terms-nav a.active {
+            color: #60a5fa;
+        }
+        
+        .warning-box {
+            border-left: 4px solid #f59e0b;
+            background-color: #fffbeb;
+        }
+        
+        .dark .warning-box {
+            border-left: 4px solid #f59e0b;
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+        
+        .info-box {
+            border-left: 4px solid #3b82f6;
+            background-color: #eff6ff;
+        }
+        
+        .dark .info-box {
+            border-left: 4px solid #60a5fa;
+            background-color: rgba(30, 64, 175, 0.2);
+        }
+        
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .legal-list {
+            counter-reset: legal-counter;
+        }
+        
+        .legal-list > li {
+            counter-increment: legal-counter;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        
+        .legal-list > li:before {
+            content: counter(legal-counter) ".";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        
+        .dark .legal-list > li:before {
+            color: #60a5fa;
+        }
+        
+        .sub-list {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .sub-list li {
+            list-style-type: disc;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="font-lato bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="text-white font-bold">G</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">GRK</h3>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Home
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">About
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Projects
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Services
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Blog
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                    </ul>
+                    <div class="flex items-center space-x-4">
+                        <!-- Dark Mode Toggle -->
+                        <button id="darkModeToggle" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-300">
+                            <i id="sunIcon" class="fas fa-sun text-yellow-500 hidden"></i>
+                            <i id="moonIcon" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
+                        </button>
+                        
+                        <button onclick="window.location.href='contact.html'" class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
+                            Contact Us
+                        </button>
+                        <button onclick="window.location.href='join.html'" class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
+                            Join Us
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="darkModeToggleMobile" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-300">
+                        <i id="sunIconMobile" class="fas fa-sun text-yellow-500 hidden"></i>
+                        <i id="moonIconMobile" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg animate-slide-up">
+                <ul class="space-y-4 px-4">
+                    <li><a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Home</a></li>
+                    <li><a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">About</a></li>
+                    <li><a href="projects.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Projects</a></li>
+                    <li><a href="services.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Services</a></li>
+                    <li><a href="blog.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Blog</a></li>
+                </ul>
+                <div class="mt-6 space-y-3 px-4">
+                    <button onclick="window.location.href='contact.html'" class="w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300">
+                        Contact Us
+                    </button>
+                    <button onclick="window.location.href='join.html'" class="w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300">
+                        Join Us
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="relative gradient-bg py-16 md:py-20 overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Terms of Service</h1>
+                <p class="text-xl text-blue-100">Last updated: March 15, 2024</p>
+                <p class="text-blue-100 mt-4">Please read these terms carefully before using our services</p>
+                
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="flex items-center text-blue-100">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>Effective Date: March 15, 2024</span>
+                    </div>
+                    <div class="flex items-center text-blue-100">
+                        <i class="fas fa-file-contract mr-2"></i>
+                        <span>Version: 3.2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar Navigation -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-32 bg-white dark:bg-dark-800 rounded-xl shadow-lg p-6 terms-nav">
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-4 text-lg">Terms Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#acceptance" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">1. Acceptance</a>
+                            <a href="#services" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">2. Services</a>
+                            <a href="#accounts" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">3. Accounts</a>
+                            <a href="#payments" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">4. Payments</a>
+                            <a href="#intellectual" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">5. Intellectual Property</a>
+                            <a href="#user-content" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">6. User Content</a>
+                            <a href="#prohibited" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">7. Prohibited Uses</a>
+                            <a href="#termination" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">8. Termination</a>
+                            <a href="#disclaimer" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">9. Disclaimers</a>
+                            <a href="#liability" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">10. Liability</a>
+                            <a href="#governing" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">11. Governing Law</a>
+                            <a href="#changes" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">12. Changes</a>
+                            <a href="#contact" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors duration-300">13. Contact</a>
+                        </nav>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-200 dark:border-dark-700">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Need legal help?</p>
+                            <a href="contact.html" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium mt-1 hover:underline">
+                                Contact our legal team
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="lg:col-span-3">
+                    <!-- Important Notice -->
+                    <div class="mb-8 warning-box p-6 rounded-xl">
+                        <div class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Important Legal Notice</h3>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    These Terms of Service constitute a legally binding agreement between you and GRK Project. By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree with any part of these terms, you must not use our services.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Acceptance -->
+                    <section id="acceptance" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon gradient-bg">
+                                <i class="fas fa-check-circle text-white"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">1. Acceptance of Terms</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Agreement to Terms</strong>
+                                    <p class="mt-1">
+                                        By accessing and using the services provided by GRK Project ("we," "us," "our"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you are prohibited from using or accessing our services.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Modifications</strong>
+                                    <p class="mt-1">
+                                        We reserve the right to modify or replace these Terms at any time at our sole discretion. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Eligibility</strong>
+                                    <p class="mt-1">
+                                        You must be at least 18 years old to use our services. By agreeing to these Terms, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into a binding agreement.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Additional Agreements</strong>
+                                    <p class="mt-1">
+                                        Certain services may require you to agree to additional terms and conditions. Those additional terms become part of your agreement with us if you use those services. In the event of a conflict between these Terms and additional terms, the additional terms will control for that service.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Services -->
+                    <section id="services" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-blue-100 dark:bg-blue-900/30">
+                                <i class="fas fa-concierge-bell text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">2. Description of Services</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Service Offerings</strong>
+                                    <p class="mt-1">
+                                        GRK Project provides digital services including but not limited to web development, mobile application development, UI/UX design, digital consulting, and related professional services ("Services").
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Service Availability</strong>
+                                    <p class="mt-1">
+                                        We strive to ensure that our Services are available 24/7, but we do not guarantee uninterrupted, timely, secure, or error-free operation. We may suspend, withdraw, or restrict the availability of all or any part of our Services for business and operational reasons.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Service Modifications</strong>
+                                    <p class="mt-1">
+                                        We reserve the right to modify, suspend, or discontinue any aspect of our Services at any time, including hours of operation or availability of any feature, database, or content, without notice or liability.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Third-Party Services</strong>
+                                    <p class="mt-1">
+                                        Our Services may integrate with or provide links to third-party websites, services, or applications. We are not responsible for the content, policies, or practices of any third-party services. Your use of third-party services is at your own risk.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Accounts -->
+                    <section id="accounts" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-green-100 dark:bg-green-900/30">
+                                <i class="fas fa-user-circle text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">3. User Accounts and Registration</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Account Creation</strong>
+                                    <p class="mt-1">
+                                        To access certain features of our Services, you may be required to create an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Account Security</strong>
+                                    <p class="mt-1">
+                                        You are responsible for safeguarding the password that you use to access our Services and for any activities or actions under your password. We encourage you to use "strong" passwords (passwords that use a combination of upper and lower case letters, numbers, and symbols) with your account.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Account Responsibility</strong>
+                                    <p class="mt-1">
+                                        You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account. We will not be liable for any loss or damage arising from your failure to comply with this section.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Account Termination</strong>
+                                    <p class="mt-1">
+                                        We reserve the right to disable any user account at any time in our sole discretion for any or no reason, including if, in our opinion, you have violated any provision of these Terms or applicable laws.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Payments -->
+                    <section id="payments" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-purple-100 dark:bg-purple-900/30">
+                                <i class="fas fa-credit-card text-purple-600 dark:text-purple-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">4. Payments and Billing</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Fees</strong>
+                                    <p class="mt-1">
+                                        Some aspects of our Services may be provided for a fee or other charge. We will provide clear pricing information before you incur any charges. All fees are quoted in U.S. dollars unless otherwise specified.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Payment Terms</strong>
+                                    <p class="mt-1">
+                                        You agree to pay all fees or charges to your account in accordance with the fees, charges, and billing terms in effect at the time a fee or charge is due and payable. You must provide a valid payment method for paid services.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Taxes</strong>
+                                    <p class="mt-1">
+                                        You are responsible for all applicable taxes, and we will charge tax when required to do so. If you are exempt from paying taxes, you must provide us with a valid tax exemption certificate.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Automatic Renewal</strong>
+                                    <p class="mt-1">
+                                        For subscription services, your subscription will automatically renew at the end of each billing cycle unless you cancel your subscription through your account settings or by contacting us. We may change the fees for our services at any time by giving you at least 30 days' advance notice.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Refunds</strong>
+                                    <p class="mt-1">
+                                        Refund policies will be specified at the time of purchase. Unless otherwise stated, fees are non-refundable. If you believe you have been charged in error, contact us within 30 days of the charge.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Late Payments</strong>
+                                    <p class="mt-1">
+                                        Late payments may be subject to interest charges at the rate of 1.5% per month (or the highest rate permitted by law, whichever is lower) from the payment due date until paid in full. We may suspend or terminate your access to Services for non-payment.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Intellectual Property -->
+                    <section id="intellectual" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-yellow-100 dark:bg-yellow-900/30">
+                                <i class="fas fa-copyright text-yellow-600 dark:text-yellow-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">5. Intellectual Property Rights</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Our Content</strong>
+                                    <p class="mt-1">
+                                        All content included on our website and Services, such as text, graphics, logos, images, audio clips, digital downloads, data compilations, and software, is the property of GRK Project or its content suppliers and protected by international copyright laws.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>License Grant</strong>
+                                    <p class="mt-1">
+                                        Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable license to access and use our Services for your personal or internal business purposes.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Restrictions</strong>
+                                    <p class="mt-1">
+                                        You agree not to:
+                                        <ul class="sub-list mt-1">
+                                            <li>Modify copies of any materials from our Services</li>
+                                            <li>Use any illustrations, photographs, video or audio sequences, or any graphics separately from the accompanying text</li>
+                                            <li>Delete or alter any copyright, trademark, or other proprietary rights notices from copies of materials from our Services</li>
+                                            <li>Reverse engineer, decompile, or disassemble any software or other products or processes accessible through our Services</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Trademarks</strong>
+                                    <p class="mt-1">
+                                        The GRK Project name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of GRK Project or its affiliates or licensors. You must not use such marks without our prior written permission.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Work Product</strong>
+                                    <p class="mt-1">
+                                        For custom development projects, intellectual property rights will be specified in a separate Statement of Work or Development Agreement. Generally, upon full payment, clients receive a license to use the developed work for its intended purpose, while GRK Project retains rights to reusable code libraries and development methodologies.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- User Content -->
+                    <section id="user-content" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-teal-100 dark:bg-teal-900/30">
+                                <i class="fas fa-upload text-teal-600 dark:text-teal-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">6. User Content and Feedback</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Definition</strong>
+                                    <p class="mt-1">
+                                        "User Content" means any content, materials, information, data, text, graphics, images, music, software, audio, video, works of authorship of any kind, and information or other materials that you post, upload, share, store, or otherwise provide through our Services.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Ownership</strong>
+                                    <p class="mt-1">
+                                        You retain all ownership rights to your User Content. However, by submitting User Content to our Services, you grant us a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to use, reproduce, distribute, prepare derivative works of, display, and perform the User Content in connection with our Services and our business.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Responsibility</strong>
+                                    <p class="mt-1">
+                                        You are solely responsible for your User Content and the consequences of posting or publishing it. You represent and warrant that you own or have the necessary licenses, rights, consents, and permissions to publish the User Content you submit.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Prohibited Content</strong>
+                                    <p class="mt-1">
+                                        You agree not to post User Content that:
+                                        <ul class="sub-list mt-1">
+                                            <li>Is unlawful, threatening, abusive, harassing, defamatory, deceptive, fraudulent, invasive of privacy, or contains explicit or graphic descriptions of sexual acts</li>
+                                            <li>Violates any patent, trademark, trade secret, copyright, or other proprietary rights of any party</li>
+                                            <li>Contains software viruses or any other computer code designed to interrupt, destroy, or limit the functionality of any computer software or hardware</li>
+                                            <li>Constitutes unauthorized or unsolicited advertising, spam, or promotional materials</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Feedback</strong>
+                                    <p class="mt-1">
+                                        If you provide us with any feedback, suggestions, or ideas regarding our Services ("Feedback"), you hereby assign to us all rights in the Feedback and agree that we shall have the right to use such Feedback and related information in any manner we deem appropriate. We will treat any Feedback you provide as non-confidential and non-proprietary.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Prohibited Uses -->
+                    <section id="prohibited" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-red-100 dark:bg-red-900/30">
+                                <i class="fas fa-ban text-red-600 dark:text-red-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">7. Prohibited Uses</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <div class="info-box p-4 rounded-lg mb-6">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                                    <i class="fas fa-info-circle text-primary-600 dark:text-primary-400 mr-2"></i>
+                                    Important Restrictions
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Violation of any prohibited use may result in immediate termination of your account and access to our Services, and may subject you to civil and criminal penalties.
+                                </p>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                You agree not to use our Services to:
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                <div class="p-4 rounded-lg border border-gray-200 dark:border-dark-700">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+                                        Illegal Activities
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Engage in any illegal, fraudulent, or harmful activities.
+                                    </p>
+                                </div>
+                                
+                                <div class="p-4 rounded-lg border border-gray-200 dark:border-dark-700">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center">
+                                        <i class="fas fa-hacker-news text-red-500 mr-2"></i>
+                                        Security Violations
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Attempt to gain unauthorized access to our systems or networks.
+                                    </p>
+                                </div>
+                                
+                                <div class="p-4 rounded-lg border border-gray-200 dark:border-dark-700">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center">
+                                        <i class="fas fa-bug text-red-500 mr-2"></i>
+                                        Malicious Code
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Introduce viruses, trojans, worms, or other malicious software.
+                                    </p>
+                                </div>
+                                
+                                <div class="p-4 rounded-lg border border-gray-200 dark:border-dark-700">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center">
+                                        <i class="fas fa-server text-red-500 mr-2"></i>
+                                        System Abuse
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Overload, flood, or spam our systems or infrastructure.
+                                    </p>
+                                </div>
+                                
+                                <div class="p-4 rounded-lg border border-gray-200 dark:border-dark-700">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center">
+                                        <i class="fas fa-user-secret text-red-500 mr-2"></i>
+                                        Privacy Violations
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Collect or harvest personal information about other users.
+                                    </p>
+                                </div>
+                                
+                                <div class="p-4 rounded-lg border border-gray-200 dark:border-dark-700">
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center">
+                                        <i class="fas fa-copyright text-red-500 mr-2"></i>
+                                        IP Infringement
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                        Infringe upon the intellectual property rights of others.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                We reserve the right to investigate and prosecute violations of any of the above to the fullest extent of the law. We may involve and cooperate with law enforcement authorities in prosecuting users who violate these Terms.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Termination -->
+                    <section id="termination" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-gray-100 dark:bg-gray-800">
+                                <i class="fas fa-power-off text-gray-600 dark:text-gray-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">8. Termination and Suspension</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Termination by You</strong>
+                                    <p class="mt-1">
+                                        You may terminate your account and stop using our Services at any time. For paid services, termination will be effective at the end of your current billing cycle unless you cancel mid-cycle, in which case you will not receive a refund for any unused portion of the cycle.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Termination by Us</strong>
+                                    <p class="mt-1">
+                                        We may terminate or suspend your account and bar access to our Services immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever, including but not limited to a breach of these Terms.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Effect of Termination</strong>
+                                    <p class="mt-1">
+                                        Upon termination, your right to use our Services will immediately cease. If you wish to terminate your account, you may simply discontinue using our Services or contact us to request account deletion.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Survival</strong>
+                                    <p class="mt-1">
+                                        All provisions of these Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Disclaimers -->
+                    <section id="disclaimer" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-orange-100 dark:bg-orange-900/30">
+                                <i class="fas fa-exclamation text-orange-600 dark:text-orange-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">9. Disclaimers and Warranties</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <div class="warning-box p-4 rounded-lg mb-6">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                                    <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                                    No Professional Advice
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    The information on our website and Services is for general informational purposes only and does not constitute professional advice. You should consult with a qualified professional for specific advice tailored to your situation.
+                                </p>
+                            </div>
+                            
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>"As Is" Basis</strong>
+                                    <p class="mt-1">
+                                        Our Services are provided on an "AS IS" and "AS AVAILABLE" basis. We disclaim all warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>No Guarantees</strong>
+                                    <p class="mt-1">
+                                        We do not warrant that:
+                                        <ul class="sub-list mt-1">
+                                            <li>Our Services will meet your specific requirements</li>
+                                            <li>Our Services will be uninterrupted, timely, secure, or error-free</li>
+                                            <li>The results that may be obtained from the use of our Services will be accurate or reliable</li>
+                                            <li>The quality of any products, services, information, or other material obtained through our Services will meet your expectations</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Third-Party Content</strong>
+                                    <p class="mt-1">
+                                        We do not warrant, endorse, guarantee, or assume responsibility for any product or service advertised or offered by a third party through our Services or any hyperlinked website or service, and we will not be a party to or in any way monitor any transaction between you and third-party providers.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Liability -->
+                    <section id="liability" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-indigo-100 dark:bg-indigo-900/30">
+                                <i class="fas fa-balance-scale text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">10. Limitation of Liability</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <div class="info-box p-4 rounded-lg mb-6">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                                    <i class="fas fa-gavel text-primary-600 dark:text-primary-400 mr-2"></i>
+                                    Important Limitation
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    To the maximum extent permitted by applicable law, in no event shall GRK Project, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages.
+                                </p>
+                            </div>
+                            
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Direct Damages Cap</strong>
+                                    <p class="mt-1">
+                                        To the maximum extent permitted by law, in no event shall our aggregate liability to you for all claims arising out of or relating to the use of or inability to use our Services exceed the greater of one hundred dollars ($100) or the amount you have paid us in the past twelve months.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Exclusions</strong>
+                                    <p class="mt-1">
+                                        Some jurisdictions do not allow the exclusion of certain warranties or the limitation or exclusion of liability for incidental or consequential damages. Accordingly, some of the above limitations may not apply to you.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Indemnification</strong>
+                                    <p class="mt-1">
+                                        You agree to defend, indemnify, and hold harmless GRK Project and its licensees and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses resulting from or arising out of:
+                                        <ul class="sub-list mt-1">
+                                            <li>Your use of and access to our Services</li>
+                                            <li>Your violation of these Terms</li>
+                                            <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right</li>
+                                            <li>Any claim that your User Content caused damage to a third party</li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Time Limitation for Claims</strong>
+                                    <p class="mt-1">
+                                        Any cause of action or claim you may have arising out of or relating to these Terms or our Services must be commenced within one (1) year after the cause of action accrues; otherwise, such cause of action or claim is permanently barred.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Governing Law -->
+                    <section id="governing" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-pink-100 dark:bg-pink-900/30">
+                                <i class="fas fa-globe-americas text-pink-600 dark:text-pink-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">11. Governing Law and Dispute Resolution</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Governing Law</strong>
+                                    <p class="mt-1">
+                                        These Terms shall be governed and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Dispute Resolution</strong>
+                                    <p class="mt-1">
+                                        Any dispute arising from or relating to these Terms or our Services shall be resolved through binding arbitration in San Francisco, California, in accordance with the rules of the American Arbitration Association. Judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction thereof.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Class Action Waiver</strong>
+                                    <p class="mt-1">
+                                        You agree that any arbitration or proceeding shall be limited to the dispute between us and you individually. To the full extent permitted by law, no arbitration or proceeding shall be joined with any other or decided on a class-action basis.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Venue</strong>
+                                    <p class="mt-1">
+                                        Notwithstanding the arbitration agreement, we may seek injunctive or other equitable relief to protect our intellectual property rights in any court of competent jurisdiction. You agree to the personal jurisdiction of the federal and state courts located in San Francisco County, California for such purposes.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Changes -->
+                    <section id="changes" class="content-section mb-12 animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon bg-cyan-100 dark:bg-cyan-900/30">
+                                <i class="fas fa-sync-alt text-cyan-600 dark:text-cyan-400"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">12. Changes to Terms</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <ol class="legal-list text-gray-600 dark:text-gray-400">
+                                <li class="mb-4">
+                                    <strong>Right to Modify</strong>
+                                    <p class="mt-1">
+                                        We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect.
+                                    </p>
+                                </li>
+                                <li class="mb-4">
+                                    <strong>Material Changes</strong>
+                                    <p class="mt-1">
+                                        What constitutes a material change will be determined at our sole discretion. We will notify you of material changes via email to the address associated with your account or through a prominent notice on our website.
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>Continued Use</strong>
+                                    <p class="mt-1">
+                                        By continuing to access or use our Services after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you must stop using our Services.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Contact -->
+                    <section id="contact" class="content-section animate-fade-in">
+                        <div class="flex items-start mb-6">
+                            <div class="section-icon gradient-bg">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white ml-4 mt-1">13. Contact Information</h2>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-dark-700">
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                If you have any questions about these Terms, please contact us:
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-3">Legal Department</h4>
+                                    <div class="space-y-2">
+                                        <p class="text-gray-600 dark:text-gray-400 flex items-center">
+                                            <i class="fas fa-user mr-3 text-primary-600 dark:text-primary-400"></i>
+                                            Legal Team, GRK Project
+                                        </p>
+                                        <p class="text-gray-600 dark:text-gray-400 flex items-center">
+                                            <i class="fas fa-envelope mr-3 text-primary-600 dark:text-primary-400"></i>
+                                            legal@grkproject.com
+                                        </p>
+                                        <p class="text-gray-600 dark:text-gray-400 flex items-center">
+                                            <i class="fas fa-phone mr-3 text-primary-600 dark:text-primary-400"></i>
+                                            +1 (555) 123-4567 ext. 3
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-3">Postal Address</h4>
+                                    <div class="space-y-2">
+                                        <p class="text-gray-600 dark:text-gray-400 flex items-start">
+                                            <i class="fas fa-map-marker-alt mr-3 text-primary-600 dark:text-primary-400 mt-1"></i>
+                                            GRK Project Legal Department<br>
+                                            123 Innovation St.<br>
+                                            Tech Valley, CA 94000<br>
+                                            United States
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box p-4 rounded-lg">
+                                <h4 class="font-bold text-gray-900 dark:text-white mb-2">
+                                    <i class="fas fa-clock text-primary-600 dark:text-primary-400 mr-2"></i>
+                                    Legal Notice Response Time
+                                </h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    We aim to respond to all legal inquiries within 14 business days. For formal legal notices, please ensure they are sent via registered mail to the address above and include a detailed description of the issue and your contact information.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Acceptance Box -->
+                    <div class="mt-12 p-8 rounded-xl border-2 border-primary-600 dark:border-primary-400 bg-primary-50 dark:bg-dark-800/30">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Agreement to Terms</h3>
+                                <p class="text-gray-600 dark:text-gray-400">By using our Services, you acknowledge that you have read and agree to these Terms of Service.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>Effective Date: March 15, 2024</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fas fa-user-check mr-2"></i>
+                                    <span>Last Updated: March 15, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">G</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">GRK<span class="gradient-text">.</span></h3>
+                    </a>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        We create innovative digital solutions that transform businesses and deliver exceptional user experiences through cutting-edge technology.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors duration-300">Our Projects</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white font-medium transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="cookies.html" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a></li>
+                        <li><a href="gdpr.html" class="text-gray-400 hover:text-white transition-colors duration-300">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400 flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary-400"></i>
+                            contact@grkproject.com
+                        </li>
+                        <li class="text-gray-400 flex items-center">
+                            <i class="fas fa-phone mr-3 text-primary-400"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li class="text-gray-400 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-primary-400"></i>
+                            123 Innovation St.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 GRK Project. All rights reserved. | <a href="privacy.html" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full gradient-bg text-white shadow-2xl hover:shadow-3xl transition-all duration-300 opacity-0 invisible flex items-center justify-center z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const sunIconMobile = document.getElementById('sunIconMobile');
+        const moonIconMobile = document.getElementById('moonIconMobile');
+        
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            
+            // Update icons
+            if (html.classList.contains('dark')) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                sunIconMobile.classList.add('hidden');
+                moonIconMobile.classList.remove('hidden');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                sunIconMobile.classList.remove('hidden');
+                moonIconMobile.classList.add('hidden');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+        
+        // Check for saved theme preference or respect OS setting
+        if (localStorage.getItem('darkMode') === 'enabled' || 
+            (localStorage.getItem('darkMode') === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            sunIconMobile.classList.add('hidden');
+            moonIconMobile.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            sunIconMobile.classList.remove('hidden');
+            moonIconMobile.classList.add('hidden');
+        }
+        
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('animate-slide-up');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update active navigation link based on scroll position
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.terms-nav a');
+            
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSectionId = section.id;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('.terms-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.terms-nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.animate-fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            updateActiveNavLink();
+            animateOnScroll();
+        });
+        window.addEventListener('load', () => {
+            updateActiveNavLink();
+            animateOnScroll();
+        });
+        
+        // Update active nav link on page load based on hash
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }, 300);
+                }
+            }
+        });
+        
+        // Print functionality for terms
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add print button if needed
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print mr-2"></i> Print Terms';
+            printButton.className = 'fixed bottom-24 right-8 px-4 py-2 rounded-full gradient-bg text-white shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center z-40';
+            printButton.onclick = function() {
+                window.print();
+            };
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+
+</html>
