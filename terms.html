@@ -185,9 +185,6 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="text-white font-bold">G</span>
-                        </div>
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white">GRK</h3>
                     </a>
                 </div>
@@ -218,12 +215,12 @@
                             <i id="moonIcon" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
                         </button>
                         
-                        <button onclick="window.location.href='contact.html'" class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
+                        <a href="contact.html" class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
                             Contact Us
-                        </button>
-                        <button onclick="window.location.href='join.html'" class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
+                        </a>
+                        <a href="joinUs.html" class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
                             Join Us
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -242,7 +239,7 @@
             </div>
 
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg animate-slide-up">
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg mobile-menu-fix">
                 <ul class="space-y-4 px-4">
                     <li><a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Home</a></li>
                     <li><a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">About</a></li>
@@ -251,12 +248,12 @@
                     <li><a href="blog.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Blog</a></li>
                 </ul>
                 <div class="mt-6 space-y-3 px-4">
-                    <button onclick="window.location.href='contact.html'" class="w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300">
+                    <a href="contact.html" class="block w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300 text-center">
                         Contact Us
-                    </button>
-                    <button onclick="window.location.href='join.html'" class="w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300">
+                    </a>
+                    <a href="joinUs.html" class="block w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 text-center">
                         Join Us
-                    </button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -994,11 +991,8 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">G</span>
-                        </div>
-                        <h3 class="text-2xl font-bold">GRK<span class="gradient-text">.</span></h3>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <h3 class="text-2xl font-bold">GRK</h3>
                     </a>
                     <p class="text-gray-400 mb-6 max-w-md">
                         We create innovative digital solutions that transform businesses and deliver exceptional user experiences through cutting-edge technology.
@@ -1028,12 +1022,12 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white font-medium transition-colors duration-300">Terms of Service</a></li>
-                        <li><a href="cookies.html" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a></li>
-                        <li><a href="gdpr.html" class="text-gray-400 hover:text-white transition-colors duration-300">GDPR Compliance</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Digital Consulting</a></li>
                     </ul>
                 </div>
                 <div>
@@ -1041,21 +1035,21 @@
                     <ul class="space-y-3">
                         <li class="text-gray-400 flex items-center">
                             <i class="fas fa-envelope mr-3 text-primary-400"></i>
-                            contact@grkproject.com
+                            contact@teamgrk.com
                         </li>
                         <li class="text-gray-400 flex items-center">
                             <i class="fas fa-phone mr-3 text-primary-400"></i>
-                            +1 (555) 123-4567
+                            +8801981736667
                         </li>
                         <li class="text-gray-400 flex items-center">
                             <i class="fas fa-map-marker-alt mr-3 text-primary-400"></i>
-                            123 Innovation St.
+                            Team GRK, Gazipur, Dhaka.
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 GRK Project. All rights reserved. | <a href="privacyPolicy.html" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></p>
+                <p>&copy; 2026 Team GRK. All rights reserved. | <a href="privacyPolicy.html" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="terms.html" class="hover:text-white transition-colors duration-300">Terms of Service</a></p>
             </div>
         </div>
     </footer>

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init('xlITaD_8kgTUvb1-z');
+            emailjs.init('xlITaD_8kgTUvb1-z'); // Your EmailJS public key
         })();
     </script>
     <!-- Tailwind CSS -->
@@ -37,7 +37,7 @@
                             100: '#f1f5f9',
                             200: '#e2e8f0',
                             300: '#cbd5e1',
-                            400: '#94a3b',
+                            400: '#94a3b8',
                             500: '#64748b',
                             600: '#475569',
                             700: '#334155',
@@ -202,6 +202,121 @@
             z-index: 40;
             margin: 0 1rem;
         }
+        
+        /* Responsive fixes */
+        @media (max-width: 768px) {
+            .job-card .flex-col.lg\:flex-row {
+                flex-direction: column;
+            }
+            
+            .job-card .lg\:mr-8 {
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+            
+            .job-card .lg\:items-end {
+                align-items: flex-start;
+            }
+            
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .quick-stats div {
+                padding: 0.75rem;
+            }
+            
+            .quick-stats .text-3xl {
+                font-size: 1.5rem;
+            }
+            
+            .process-line {
+                display: none;
+            }
+            
+            .application-step {
+                margin-bottom: 2rem;
+            }
+            
+            .application-step:last-child {
+                margin-bottom: 0;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-buttons a {
+                width: 100%;
+                margin-bottom: 0.75rem;
+            }
+            
+            .job-filters {
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                justify-content: flex-start;
+            }
+            
+            .job-filters .filter-btn {
+                white-space: nowrap;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .job-card {
+                padding: 1.5rem;
+            }
+            
+            .job-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Fix for job details on mobile */
+        .job-details-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .job-details-mobile .flex {
+            align-items: center;
+        }
+        
+        /* Fix for file upload area on mobile */
+        .file-upload-area {
+            padding: 1.5rem;
+        }
+        
+        /* Fix for EmailJS form submission */
+        #application-success, #application-error {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 
@@ -292,38 +407,38 @@
         <div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+                <h1 class="text-3xl md:text-6xl font-bold text-white mb-6 animate-fade-in hero-title">
                     Join Our <span class="gradient-text">Team</span>
                 </h1>
-                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
                     Build the future with us. We're looking for passionate innovators, creative thinkers, and problem solvers to join our growing team.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.4s;">
-                    <a href="#open-positions" class="px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in hero-buttons" style="animation-delay: 0.4s;">
+                    <a href="#open-positions" class="px-6 md:px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl text-center">
                         <i class="fas fa-briefcase mr-2"></i> View Open Positions
                     </a>
-                    <a href="#culture" class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium">
+                    <a href="#culture" class="px-6 md:px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium text-center">
                         <i class="fas fa-users mr-2"></i> Our Culture
                     </a>
                 </div>
 
                 <!-- Quick Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in" style="animation-delay: 0.6s;">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <div class="text-3xl font-bold text-white mb-1">25+</div>
-                        <div class="text-blue-100">Team Members</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-12 animate-fade-in quick-stats" style="animation-delay: 0.6s;">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">25+</div>
+                        <div class="text-blue-100 text-sm md:text-base">Team Members</div>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <div class="text-3xl font-bold text-white mb-1">15</div>
-                        <div class="text-blue-100">Countries</div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">15</div>
+                        <div class="text-blue-100 text-sm md:text-base">Countries</div>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <div class="text-3xl font-bold text-white mb-1">60%</div>
-                        <div class="text-blue-100">Women in Tech</div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">60%</div>
+                        <div class="text-blue-100 text-sm md:text-base">Women in Tech</div>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <div class="text-3xl font-bold text-white mb-1">10+</div>
-                        <div class="text-blue-100">Open Roles</div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                        <div class="text-2xl md:text-3xl font-bold text-white mb-1">10+</div>
+                        <div class="text-blue-100 text-sm md:text-base">Open Roles</div>
                     </div>
                 </div>
             </div>
@@ -334,72 +449,72 @@
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why <span class="gradient-text">Team GRK?</span></h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Why <span class="gradient-text">Team GRK?</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     We're not just building products - we're building a community of innovators who are passionate about making a difference.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 benefits-grid">
                 <!-- Benefit 1 -->
-                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up">
-                    <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-rocket text-2xl text-white"></i>
+                <div class="benefit-card bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up">
+                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-xl gradient-bg flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-rocket text-xl md:text-2xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Impactful Work</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Impactful Work</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 md:mb-6">
                         Work on projects that matter. We solve real-world problems for clients across industries, from healthcare to finance to education.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Work with Fortune 500 companies</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Work with Fortune 500 companies</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Solve complex technical challenges</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Solve complex technical challenges</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 2 -->
-                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" style="animation-delay: 0.1s;">
-                    <div class="w-16 h-16 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-graduation-cap text-2xl text-green-600 dark:text-green-400"></i>
+                <div class="benefit-card bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" style="animation-delay: 0.1s;">
+                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-graduation-cap text-xl md:text-2xl text-green-600 dark:text-green-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Continuous Growth</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Continuous Growth</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 md:mb-6">
                         We invest in your development with mentorship programs, learning budgets, and opportunities to work with cutting-edge technologies.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">$2,000 annual learning budget</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">$2,000 annual learning budget</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Regular training and workshops</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Regular training and workshops</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 3 -->
-                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" style="animation-delay: 0.2s;">
-                    <div class="w-16 h-16 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-balance-scale text-2xl text-purple-600 dark:text-purple-400"></i>
+                <div class="benefit-card bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-balance-scale text-xl md:text-2xl text-purple-600 dark:text-purple-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Work-Life Balance</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Work-Life Balance</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 md:mb-6">
                         Flexible hours, remote work options, and unlimited PTO. We believe that happy team members do their best work.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Flexible remote work policy</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Flexible remote work policy</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Unlimited paid time off</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Unlimited paid time off</span>
                         </li>
                     </ul>
                 </div>
@@ -411,42 +526,42 @@
     <section id="culture" class="py-16 md:py-24 bg-gray-50 dark:bg-dark-800/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Culture</span></h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Our <span class="gradient-text">Culture</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     We've built a culture of collaboration, innovation, and respect where everyone can thrive.
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="animate-fade-in">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="animate-fade-in order-2 lg:order-1">
                     <div class="relative">
                         <div class="rounded-2xl overflow-hidden shadow-2xl">
                             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Our Team Culture" class="w-full h-64 md:h-80 object-cover">
                         </div>
-                        <div class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg max-w-xs animate-bounce-in">
-                            <div class="flex items-center space-x-3 mb-3">
-                                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
-                                    <i class="fas fa-heart text-white"></i>
+                        <div class="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 bg-white dark:bg-dark-800 p-4 md:p-6 rounded-xl shadow-lg max-w-xs animate-bounce-in">
+                            <div class="flex items-center space-x-2 md:space-x-3 mb-2 md:mb-3">
+                                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full gradient-bg flex items-center justify-center">
+                                    <i class="fas fa-heart text-white text-sm md:text-base"></i>
                                 </div>
-                                <h3 class="font-bold text-gray-900 dark:text-white">4.8/5</h3>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-base md:text-lg">4.8/5</h3>
                             </div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Employee satisfaction rating</p>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Employee satisfaction rating</p>
                         </div>
                     </div>
                 </div>
-                <div class="animate-fade-in" style="animation-delay: 0.2s;">
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">What Makes Us Unique</h3>
+                <div class="animate-fade-in order-1 lg:order-2" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">What Makes Us Unique</h3>
 
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-3 md:mr-4">
                                     <i class="fas fa-lightbulb text-blue-600 dark:text-blue-400"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Innovation First</h4>
-                                <p class="text-gray-600 dark:text-gray-400">
+                                <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Innovation First</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                                     We encourage experimentation and creative thinking. Every team member has a voice in how we approach problems and build solutions.
                                 </p>
                             </div>
@@ -454,13 +569,13 @@
 
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 md:mr-4">
                                     <i class="fas fa-hands-helping text-green-600 dark:text-green-400"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Collaborative Environment</h4>
-                                <p class="text-gray-600 dark:text-gray-400">
+                                <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Collaborative Environment</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                                     Cross-functional teams work together to deliver exceptional results. We believe the best solutions come from diverse perspectives.
                                 </p>
                             </div>
@@ -468,13 +583,13 @@
 
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-3 md:mr-4">
                                     <i class="fas fa-chart-line text-purple-600 dark:text-purple-400"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Career Growth</h4>
-                                <p class="text-gray-600 dark:text-gray-400">
+                                <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Career Growth</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                                     Clear career paths, mentorship programs, and opportunities to take on leadership roles regardless of seniority.
                                 </p>
                             </div>
@@ -484,37 +599,37 @@
             </div>
 
             <!-- Culture Values -->
-            <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-bullseye text-3xl text-blue-600 dark:text-blue-400"></i>
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <i class="fas fa-bullseye text-2xl md:text-3xl text-blue-600 dark:text-blue-400"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Purpose Driven</h4>
-                    <p class="text-gray-600 dark:text-gray-400">We work on projects that create real impact</p>
+                    <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Purpose Driven</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">We work on projects that create real impact</p>
                 </div>
 
                 <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-3xl text-green-600 dark:text-green-400"></i>
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <i class="fas fa-users text-2xl md:text-3xl text-green-600 dark:text-green-400"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Inclusive</h4>
-                    <p class="text-gray-600 dark:text-gray-400">Diverse perspectives drive innovation</p>
+                    <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Inclusive</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">Diverse perspectives drive innovation</p>
                 </div>
 
                 <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-3xl text-purple-600 dark:text-purple-400"></i>
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <i class="fas fa-shield-alt text-2xl md:text-3xl text-purple-600 dark:text-purple-400"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Transparent</h4>
-                    <p class="text-gray-600 dark:text-gray-400">Open communication at all levels</p>
+                    <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Transparent</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">Open communication at all levels</p>
                 </div>
 
                 <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-balance-scale text-3xl text-orange-600 dark:text-orange-400"></i>
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <i class="fas fa-balance-scale text-2xl md:text-3xl text-orange-600 dark:text-orange-400"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Balanced</h4>
-                    <p class="text-gray-600 dark:text-gray-400">Work that fuels life, not the other way around</p>
+                    <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1 md:mb-2">Balanced</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">Work that fuels life, not the other way around</p>
                 </div>
             </div>
         </div>
@@ -524,7 +639,7 @@
     <section id="open-positions" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Open <span class="gradient-text">Positions</span></h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Open <span class="gradient-text">Positions</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     Browse our current openings and find the perfect role for your skills and aspirations.
                 </p>
@@ -532,27 +647,27 @@
 
             <!-- Job Filters -->
             <div class="mb-12">
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <button class="filter-btn active px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="all">
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8 job-filters">
+                    <button class="filter-btn active px-4 md:px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm md:text-base" data-filter="all">
                         All Positions
                     </button>
-                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="engineering">
+                    <button class="filter-btn px-4 md:px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm md:text-base" data-filter="engineering">
                         Engineering
                     </button>
-                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="design">
+                    <button class="filter-btn px-4 md:px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm md:text-base" data-filter="design">
                         Design
                     </button>
-                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="business">
+                    <button class="filter-btn px-4 md:px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm md:text-base" data-filter="business">
                         Business
                     </button>
-                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="remote">
+                    <button class="filter-btn px-4 md:px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm md:text-base" data-filter="remote">
                         Remote
                     </button>
                 </div>
 
                 <!-- Search Bar -->
                 <div class="max-w-md mx-auto relative">
-                    <input type="text" id="job-search" placeholder="Search positions, skills, or keywords..." class="w-full px-6 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <input type="text" id="job-search" placeholder="Search positions, skills, or keywords..." class="w-full px-4 md:px-6 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base">
                     <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
                 </div>
             </div>
@@ -560,40 +675,42 @@
             <!-- Job Listings -->
             <div class="space-y-6" id="jobs-container">
                 <!-- Job 1 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="engineering remote">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between">
-                        <div class="mb-6 lg:mb-0 lg:mr-8">
-                            <div class="flex items-center mb-4">
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="engineering remote">
+                    <div class="flex flex-col">
+                        <div class="mb-4 md:mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm font-medium">
                                     Engineering
                                 </span>
-                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
+                                <span class="px-2 md:px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs md:text-sm font-medium">
                                     Remote
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Senior Frontend Developer</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">Senior Frontend Developer</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">
                                 Build beautiful, responsive user interfaces using React, TypeScript, and modern web technologies.
                             </p>
-                            <div class="flex flex-wrap gap-4">
+                            <div class="job-details-mobile">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-map-marker-alt mr-2"></i>
-                                    <span>Remote • San Francisco, CA</span>
+                                    <i class="fas fa-map-marker-alt mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Remote • San Francisco, CA</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-briefcase mr-2"></i>
-                                    <span>Full-time</span>
+                                    <i class="fas fa-briefcase mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Full-time</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-clock mr-2"></i>
-                                    <span>Posted 2 days ago</span>
+                                    <i class="fas fa-clock mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Posted 2 days ago</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col items-start lg:items-end">
-                            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$120k - $160k</div>
-                            <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="1">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
+                            <div class="mb-4 md:mb-0">
+                                <div class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">$120k - $160k</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs md:text-sm">+ equity + benefits</div>
+                            </div>
+                            <button class="apply-job-btn px-4 md:px-6 py-2 md:py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium text-sm md:text-base" data-job-id="1">
                                 Apply Now
                             </button>
                         </div>
@@ -601,40 +718,42 @@
                 </div>
 
                 <!-- Job 2 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="design" style="animation-delay: 0.1s;">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between">
-                        <div class="mb-6 lg:mb-0 lg:mr-8">
-                            <div class="flex items-center mb-4">
-                                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium mr-3">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="design" style="animation-delay: 0.1s;">
+                    <div class="flex flex-col">
+                        <div class="mb-4 md:mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs md:text-sm font-medium">
                                     Design
                                 </span>
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                                <span class="px-2 md:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm font-medium">
                                     On-site
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">UI/UX Designer</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">UI/UX Designer</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">
                                 Create intuitive and beautiful user experiences for web and mobile applications. Work closely with product and engineering teams.
                             </p>
-                            <div class="flex flex-wrap gap-4">
+                            <div class="job-details-mobile">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-map-marker-alt mr-2"></i>
-                                    <span>San Francisco, CA</span>
+                                    <i class="fas fa-map-marker-alt mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">San Francisco, CA</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-briefcase mr-2"></i>
-                                    <span>Full-time</span>
+                                    <i class="fas fa-briefcase mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Full-time</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-clock mr-2"></i>
-                                    <span>Posted 5 days ago</span>
+                                    <i class="fas fa-clock mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Posted 5 days ago</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col items-start lg:items-end">
-                            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$90k - $130k</div>
-                            <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="2">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
+                            <div class="mb-4 md:mb-0">
+                                <div class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">$90k - $130k</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs md:text-sm">+ equity + benefits</div>
+                            </div>
+                            <button class="apply-job-btn px-4 md:px-6 py-2 md:py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium text-sm md:text-base" data-job-id="2">
                                 Apply Now
                             </button>
                         </div>
@@ -642,40 +761,42 @@
                 </div>
 
                 <!-- Job 3 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="engineering remote" style="animation-delay: 0.2s;">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between">
-                        <div class="mb-6 lg:mb-0 lg:mr-8">
-                            <div class="flex items-center mb-4">
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="engineering remote" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col">
+                        <div class="mb-4 md:mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm font-medium">
                                     Engineering
                                 </span>
-                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
+                                <span class="px-2 md:px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs md:text-sm font-medium">
                                     Remote
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Backend Engineer (Node.js)</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">Backend Engineer (Node.js)</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">
                                 Build scalable APIs and microservices using Node.js, TypeScript, and cloud technologies. Focus on performance and reliability.
                             </p>
-                            <div class="flex flex-wrap gap-4">
+                            <div class="job-details-mobile">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-map-marker-alt mr-2"></i>
-                                    <span>Remote • Anywhere</span>
+                                    <i class="fas fa-map-marker-alt mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Remote • Anywhere</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-briefcase mr-2"></i>
-                                    <span>Full-time</span>
+                                    <i class="fas fa-briefcase mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Full-time</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-clock mr-2"></i>
-                                    <span>Posted 1 week ago</span>
+                                    <i class="fas fa-clock mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Posted 1 week ago</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col items-start lg:items-end">
-                            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$110k - $150k</div>
-                            <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="3">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
+                            <div class="mb-4 md:mb-0">
+                                <div class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">$110k - $150k</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs md:text-sm">+ equity + benefits</div>
+                            </div>
+                            <button class="apply-job-btn px-4 md:px-6 py-2 md:py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium text-sm md:text-base" data-job-id="3">
                                 Apply Now
                             </button>
                         </div>
@@ -683,40 +804,42 @@
                 </div>
 
                 <!-- Job 4 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="business" style="animation-delay: 0.3s;">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between">
-                        <div class="mb-6 lg:mb-0 lg:mr-8">
-                            <div class="flex items-center mb-4">
-                                <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium mr-3">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="business" style="animation-delay: 0.3s;">
+                    <div class="flex flex-col">
+                        <div class="mb-4 md:mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
+                                <span class="px-2 md:px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-xs md:text-sm font-medium">
                                     Business
                                 </span>
-                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                                <span class="px-2 md:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm font-medium">
                                     Hybrid
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Business Development Manager</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">Business Development Manager</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">
                                 Drive growth through strategic partnerships and client acquisition. Identify new market opportunities and build lasting relationships.
                             </p>
-                            <div class="flex flex-wrap gap-4">
+                            <div class="job-details-mobile">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-map-marker-alt mr-2"></i>
-                                    <span>San Francisco, CA</span>
+                                    <i class="fas fa-map-marker-alt mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">San Francisco, CA</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-briefcase mr-2"></i>
-                                    <span>Full-time</span>
+                                    <i class="fas fa-briefcase mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Full-time</span>
                                 </div>
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                    <i class="fas fa-clock mr-2"></i>
-                                    <span>Posted 2 weeks ago</span>
+                                    <i class="fas fa-clock mr-2 text-xs md:text-sm"></i>
+                                    <span class="text-xs md:text-sm">Posted 2 weeks ago</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col items-start lg:items-end">
-                            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$100k - $140k</div>
-                            <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ commission + benefits</div>
-                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="4">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
+                            <div class="mb-4 md:mb-0">
+                                <div class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">$100k - $140k</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs md:text-sm">+ commission + benefits</div>
+                            </div>
+                            <button class="apply-job-btn px-4 md:px-6 py-2 md:py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium text-sm md:text-base" data-job-id="4">
                                 Apply Now
                             </button>
                         </div>
@@ -725,8 +848,8 @@
             </div>
 
             <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button id="load-more-jobs" class="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-all duration-300 font-medium">
+            <div class="text-center mt-8 md:mt-12">
+                <button id="load-more-jobs" class="px-6 md:px-8 py-2 md:py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-all duration-300 font-medium text-sm md:text-base">
                     <i class="fas fa-sync-alt mr-2"></i> Load More Positions
                 </button>
             </div>
@@ -737,81 +860,81 @@
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-dark-800/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Process</span></h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Our <span class="gradient-text">Process</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     We've designed our hiring process to be transparent, respectful, and efficient. Here's what you can expect.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8 relative">
+            <div class="grid md:grid-cols-4 gap-6 md:gap-8 relative">
                 <!-- Process Line -->
-                <div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-300 dark:bg-dark-700 transform translate-y-6"></div>
+                <div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-300 dark:bg-dark-700 transform translate-y-6 process-line"></div>
 
                 <!-- Step 1 -->
                 <div class="application-step text-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full gradient-bg flex items-center justify-center mx-auto mb-6 relative z-10">
-                        <i class="fas fa-file-alt text-2xl md:text-3xl text-white"></i>
-                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
-                            <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">01</span>
+                    <div class="w-16 h-16 md:w-24 md:h-24 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4 md:mb-6 relative z-10">
+                        <i class="fas fa-file-alt text-xl md:text-3xl text-white"></i>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                            <span class="text-primary-600 dark:text-primary-400 font-bold text-xs md:text-sm">01</span>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Application</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">Application</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                         Submit your application through our portal. We review every application personally.
                     </p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="application-step text-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
-                        <i class="fas fa-phone text-2xl md:text-3xl text-green-600 dark:text-green-400"></i>
-                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
-                            <span class="text-green-600 dark:text-green-400 font-bold text-sm">02</span>
+                    <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4 md:mb-6 relative z-10">
+                        <i class="fas fa-phone text-xl md:text-3xl text-green-600 dark:text-green-400"></i>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                            <span class="text-green-600 dark:text-green-400 font-bold text-xs md:text-sm">02</span>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Initial Call</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">Initial Call</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                         30-minute conversation with our talent team to discuss your background and interests.
                     </p>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="application-step text-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
-                        <i class="fas fa-laptop-code text-2xl md:text-3xl text-purple-600 dark:text-purple-400"></i>
-                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
-                            <span class="text-purple-600 dark:text-purple-400 font-bold text-sm">03</span>
+                    <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-4 md:mb-6 relative z-10">
+                        <i class="fas fa-laptop-code text-xl md:text-3xl text-purple-600 dark:text-purple-400"></i>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                            <span class="text-purple-600 dark:text-purple-400 font-bold text-xs md:text-sm">03</span>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Technical Assessment</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">Technical Assessment</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                         Role-specific assessment that reflects the actual work you'll be doing.
                     </p>
                 </div>
 
                 <!-- Step 4 -->
                 <div class="application-step text-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
-                        <i class="fas fa-users text-2xl md:text-3xl text-blue-600 dark:text-blue-400"></i>
-                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
-                            <span class="text-blue-600 dark:text-blue-400 font-bold text-sm">04</span>
+                    <div class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-4 md:mb-6 relative z-10">
+                        <i class="fas fa-users text-xl md:text-3xl text-blue-600 dark:text-blue-400"></i>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                            <span class="text-blue-600 dark:text-blue-400 font-bold text-xs md:text-sm">04</span>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Team Interviews</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">Team Interviews</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                         Meet the team and discuss your experience, skills, and cultural fit.
                     </p>
                 </div>
             </div>
 
             <!-- Timeline Note -->
-            <div class="mt-12 max-w-3xl mx-auto text-center">
-                <div class="bg-white dark:bg-dark-800 p-6 rounded-2xl shadow-lg">
-                    <div class="flex items-center justify-center mb-4">
-                        <i class="fas fa-clock text-primary-600 dark:text-primary-400 text-xl mr-3"></i>
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">Typical Timeline</h4>
+            <div class="mt-8 md:mt-12 max-w-3xl mx-auto text-center">
+                <div class="bg-white dark:bg-dark-800 p-4 md:p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center justify-center mb-3 md:mb-4">
+                        <i class="fas fa-clock text-primary-600 dark:text-primary-400 text-lg md:text-xl mr-2 md:mr-3"></i>
+                        <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-white">Typical Timeline</h4>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400">
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                         Our hiring process typically takes 2-3 weeks from application to offer. We provide feedback at every stage and keep you informed throughout the process.
                     </p>
                 </div>
@@ -823,79 +946,79 @@
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Life at <span class="gradient-text">GRK</span></h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Life at <span class="gradient-text">GRK</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     Hear from our team members about what it's like to work at Team GRK.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 testimonial-grid">
                 <!-- Testimonial 1 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 rounded-full overflow-hidden mr-4">
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4 md:mb-6">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden mr-3 md:mr-4">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="David Chen" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white">David Chen</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Senior Frontend Developer</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base md:text-lg">David Chen</h4>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Senior Frontend Developer</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-4 md:mb-6 text-sm md:text-base">
                         "What I love most about GRK is the trust and autonomy we're given. I get to work on challenging problems with cutting-edge technologies while having the freedom to explore new approaches."
                     </p>
                     <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 rounded-full overflow-hidden mr-4">
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4 md:mb-6">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden mr-3 md:mr-4">
                             <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Priya Sharma" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white">Priya Sharma</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">UI/UX Designer</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base md:text-lg">Priya Sharma</h4>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">UI/UX Designer</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-4 md:mb-6 text-sm md:text-base">
                         "The collaborative culture here is amazing. Designers, developers, and product managers work together seamlessly. I've grown more in two years here than in my previous five years combined."
                     </p>
                     <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star-half-alt text-sm md:text-base"></i>
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 rounded-full overflow-hidden mr-4">
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4 md:mb-6">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden mr-3 md:mr-4">
                             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Marcus Johnson" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white">Marcus Johnson</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Backend Engineer</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base md:text-lg">Marcus Johnson</h4>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Backend Engineer</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-4 md:mb-6 text-sm md:text-base">
                         "The work-life balance here is real. As a remote employee, I have the flexibility to work when I'm most productive while still being part of an amazing team that values collaboration and innovation."
                     </p>
                     <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
+                        <i class="fas fa-star text-sm md:text-base"></i>
                     </div>
                 </div>
             </div>
@@ -906,141 +1029,141 @@
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-dark-800/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Benefits & <span class="gradient-text">Perks</span></h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Benefits & <span class="gradient-text">Perks</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     We take care of our team with comprehensive benefits and unique perks that support your health, growth, and happiness.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 benefits-grid">
                 <!-- Benefit 1 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-heartbeat text-2xl text-blue-600 dark:text-blue-400"></i>
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-heartbeat text-lg md:text-2xl text-blue-600 dark:text-blue-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Health & Wellness</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Health & Wellness</h3>
+                    <ul class="space-y-2 md:space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Comprehensive medical, dental, and vision</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Comprehensive medical, dental, and vision</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Mental health support and counseling</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Mental health support and counseling</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Gym membership or home workout stipend</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Gym membership or home workout stipend</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 2 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-graduation-cap text-2xl text-green-600 dark:text-green-400"></i>
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-graduation-cap text-lg md:text-2xl text-green-600 dark:text-green-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Learning & Development</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Learning & Development</h3>
+                    <ul class="space-y-2 md:space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">$2,000 annual learning budget</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">$2,000 annual learning budget</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Conference and workshop attendance</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Conference and workshop attendance</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Regular internal tech talks</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Regular internal tech talks</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 3 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-home text-2xl text-purple-600 dark:text-purple-400"></i>
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-home text-lg md:text-2xl text-purple-600 dark:text-purple-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Work Environment</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Work Environment</h3>
+                    <ul class="space-y-2 md:space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Flexible remote work options</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Flexible remote work options</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Modern office with great amenities</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Modern office with great amenities</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Standing desks and ergonomic setup</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Standing desks and ergonomic setup</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 4 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-umbrella-beach text-2xl text-orange-600 dark:text-orange-400"></i>
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-umbrella-beach text-lg md:text-2xl text-orange-600 dark:text-orange-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Time Off</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Time Off</h3>
+                    <ul class="space-y-2 md:space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Unlimited paid time off</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Unlimited paid time off</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Paid parental leave (16 weeks)</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Paid parental leave (16 weeks)</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Company-wide holidays and closures</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Company-wide holidays and closures</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 5 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-money-bill-wave text-2xl text-pink-600 dark:text-pink-400"></i>
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-money-bill-wave text-lg md:text-2xl text-pink-600 dark:text-pink-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Financial Benefits</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Financial Benefits</h3>
+                    <ul class="space-y-2 md:space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Competitive salary and equity</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Competitive salary and equity</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">401(k) with company matching</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">401(k) with company matching</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Annual bonus potential</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Annual bonus potential</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Benefit 6 -->
-                <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-6">
-                        <i class="fas fa-pizza-slice text-2xl text-yellow-600 dark:text-yellow-400"></i>
+                <div class="bg-white dark:bg-dark-800 p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-4 md:mb-6">
+                        <i class="fas fa-pizza-slice text-lg md:text-2xl text-yellow-600 dark:text-yellow-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Fun & Community</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">Fun & Community</h3>
+                    <ul class="space-y-2 md:space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Weekly team lunches and snacks</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Weekly team lunches and snacks</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Quarterly team events and outings</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Quarterly team events and outings</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Hobby groups and clubs</span>
+                            <i class="fas fa-check text-green-500 mr-2 md:mr-3 mt-1 text-sm md:text-base"></i>
+                            <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Hobby groups and clubs</span>
                         </li>
                     </ul>
                 </div>
@@ -1052,47 +1175,47 @@
     <section id="application-form" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to <span class="gradient-text">Apply?</span></h2>
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 section-title">Ready to <span class="gradient-text">Apply?</span></h2>
                     <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         Submit your application for the selected position. We'll review it and get back to you within 5 business days.
                     </p>
                 </div>
 
-                <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-2xl">
-                    <div id="job-application-header" class="mb-8">
-                        <h3 id="applying-for" class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Apply for Position</h3>
-                        <p id="application-instructions" class="text-gray-600 dark:text-gray-400">
+                <div class="bg-white dark:bg-dark-800 rounded-2xl p-4 md:p-8 shadow-2xl">
+                    <div id="job-application-header" class="mb-6 md:mb-8">
+                        <h3 id="applying-for" class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">Apply for Position</h3>
+                        <p id="application-instructions" class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                             Please fill out the form below and upload your resume. Fields marked with * are required.
                         </p>
                     </div>
 
-                    <form id="application-form-content" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
+                    <form id="application-form-content" class="space-y-4 md:space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                             <div>
-                                <label for="app-first-name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">First Name *</label>
-                                <input type="text" id="app-first-name" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                <label for="app-first-name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">First Name *</label>
+                                <input type="text" id="app-first-name" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" required>
                             </div>
                             <div>
-                                <label for="app-last-name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Last Name *</label>
-                                <input type="text" id="app-last-name" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                <label for="app-last-name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Last Name *</label>
+                                <input type="text" id="app-last-name" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" required>
                             </div>
                         </div>
 
-                        <div class="grid md:grid-cols-2 gap-6">
+                        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                             <div>
-                                <label for="app-email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address *</label>
-                                <input type="email" id="app-email" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                <label for="app-email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Email Address *</label>
+                                <input type="email" id="app-email" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" required>
                             </div>
                             <div>
-                                <label for="app-phone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number *</label>
-                                <input type="tel" id="app-phone" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                <label for="app-phone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Phone Number *</label>
+                                <input type="tel" id="app-phone" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" required>
                             </div>
                         </div>
 
                         <div>
-                            <label for="app-position" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Position Applying For *</label>
-                            <select id="app-position" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                            <label for="app-position" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Position Applying For *</label>
+                            <select id="app-position" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" required>
                                 <option value="">Select a position</option>
                                 <option value="Senior Frontend Developer">Senior Frontend Developer</option>
                                 <option value="UI/UX Designer">UI/UX Designer</option>
@@ -1102,58 +1225,58 @@
                         </div>
 
                         <div>
-                            <label for="app-linkedin" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">LinkedIn Profile</label>
-                            <input type="url" id="app-linkedin" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="https://linkedin.com/in/yourprofile">
+                            <label for="app-linkedin" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">LinkedIn Profile</label>
+                            <input type="url" id="app-linkedin" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" placeholder="https://linkedin.com/in/yourprofile">
                         </div>
 
                         <div>
-                            <label for="app-portfolio" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Portfolio/GitHub URL</label>
-                            <input type="url" id="app-portfolio" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="https://github.com/yourusername or https://yourportfolio.com">
+                            <label for="app-portfolio" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Portfolio/GitHub URL</label>
+                            <input type="url" id="app-portfolio" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" placeholder="https://github.com/yourusername or https://yourportfolio.com">
                         </div>
 
                         <!-- File Upload -->
                         <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Resume/CV *</label>
-                            <div id="file-upload-area" class="file-upload-area p-8 rounded-lg text-center cursor-pointer">
-                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
-                                <p class="text-gray-600 dark:text-gray-400 mb-2">
+                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Resume/CV *</label>
+                            <div id="file-upload-area" class="file-upload-area p-4 md:p-8 rounded-lg text-center cursor-pointer">
+                                <i class="fas fa-cloud-upload-alt text-3xl md:text-4xl text-gray-400 mb-3 md:mb-4"></i>
+                                <p class="text-gray-600 dark:text-gray-400 mb-1 md:mb-2 text-sm md:text-base">
                                     <span class="font-medium text-primary-600 dark:text-primary-400">Click to upload</span> or drag and drop
                                 </p>
-                                <p class="text-gray-500 dark:text-gray-500 text-sm">
+                                <p class="text-gray-500 dark:text-gray-500 text-xs md:text-sm">
                                     PDF, DOC, DOCX up to 5MB
                                 </p>
                                 <input type="file" id="resume-upload" class="hidden" accept=".pdf,.doc,.docx">
                             </div>
-                            <div id="file-name" class="text-sm text-gray-500 dark:text-gray-400 mt-2 hidden"></div>
+                            <div id="file-name" class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-2 hidden"></div>
                         </div>
 
                         <div>
-                            <label for="app-cover-letter" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Cover Letter</label>
-                            <textarea id="app-cover-letter" rows="4" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Tell us why you're interested in this position and what makes you a great fit..."></textarea>
+                            <label for="app-cover-letter" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 text-sm md:text-base">Cover Letter</label>
+                            <textarea id="app-cover-letter" rows="4" class="w-full px-3 md:px-4 py-2 md:py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm md:text-base" placeholder="Tell us why you're interested in this position and what makes you a great fit..."></textarea>
                         </div>
 
-                        <div class="flex items-center">
-                            <input type="checkbox" id="app-consent" class="w-4 h-4 text-primary-600 bg-gray-100 dark:bg-dark-700 border-gray-300 dark:border-dark-600 rounded focus:ring-primary-500 focus:ring-2" required>
-                            <label for="app-consent" class="ml-2 text-gray-700 dark:text-gray-300 text-sm">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="app-consent" class="w-4 h-4 text-primary-600 bg-gray-100 dark:bg-dark-700 border-gray-300 dark:border-dark-600 rounded focus:ring-primary-500 focus:ring-2 mt-1" required>
+                            <label for="app-consent" class="ml-2 text-gray-700 dark:text-gray-300 text-xs md:text-sm">
                                 I consent to Team GRK storing and processing my personal data for recruitment purposes *
                             </label>
                         </div>
 
-                        <div id="application-success" class="hidden p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg">
+                        <div id="application-success" class="hidden p-3 md:p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg text-sm md:text-base">
                             <i class="fas fa-check-circle mr-2"></i>
                             Thank you! Your application has been submitted successfully. We'll review it and get back to you soon.
                         </div>
 
-                        <div id="application-error" class="hidden p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg">
+                        <div id="application-error" class="hidden p-3 md:p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg text-sm md:text-base">
                             <i class="fas fa-exclamation-circle mr-2"></i>
                             <span id="app-error-message">There was an error submitting your application. Please try again.</span>
                         </div>
 
-                        <button type="submit" id="submit-application" class="w-full px-6 py-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl flex items-center justify-center">
+                        <button type="submit" id="submit-application" class="w-full px-4 md:px-6 py-3 md:py-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl flex items-center justify-center text-sm md:text-base">
                             <i class="fas fa-paper-plane mr-2"></i> Submit Application
                         </button>
 
-                        <p class="text-gray-500 dark:text-gray-400 text-sm text-center">
+                        <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm text-center">
                             Need help with your application? <a href="contact.html" class="text-primary-600 dark:text-primary-400 hover:underline">Contact our talent team</a>
                         </p>
                     </form>
@@ -1165,23 +1288,23 @@
     <!-- Don't See Your Role? -->
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
+            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl overflow-hidden relative">
                 <!-- Background elements -->
-                <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+                <div class="absolute top-0 left-0 w-32 h-32 md:w-64 md:h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
 
                 <div class="relative z-10 max-w-3xl mx-auto text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <h2 class="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
                         Don't See Your Perfect Role?
                     </h2>
-                    <p class="text-blue-100 mb-8 text-lg">
+                    <p class="text-blue-100 mb-6 md:mb-8 text-base md:text-lg">
                         We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#application-form" class="px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+                        <a href="#application-form" class="px-4 md:px-6 lg:px-8 py-2 md:py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl text-center text-sm md:text-base">
                             <i class="fas fa-paper-plane mr-2"></i> Submit General Application
                         </a>
-                        <a href="contact.html" class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium">
+                        <a href="contact.html" class="px-4 md:px-6 lg:px-8 py-2 md:py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium text-center text-sm md:text-base">
                             <i class="fas fa-envelope mr-2"></i> Contact Talent Team
                         </a>
                     </div>
@@ -1195,7 +1318,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                    <a href="#" class="flex items-center space-x-2 mb-6">
                         <h3 class="text-2xl font-bold">GRK</h3>
                     </a>
                     <p class="text-gray-400 mb-6 max-w-md">
@@ -1253,13 +1376,13 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Team GRK. All rights reserved.</p>
+                <p>&copy; 2026 Team GRK. All rights reserved. | <a href="privacyPolicy.html" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="terms.html" class="hover:text-white transition-colors duration-300">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full gradient-bg text-white shadow-2xl hover:shadow-3xl transition-all duration-300 opacity-0 invisible flex items-center justify-center z-40">
+    <button id="backToTop" class="fixed bottom-6 right-6 w-10 h-10 md:w-12 md:h-12 rounded-full gradient-bg text-white shadow-2xl hover:shadow-3xl transition-all duration-300 opacity-0 invisible flex items-center justify-center z-40">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -1293,14 +1416,14 @@
         if (savedTheme === 'enabled' || 
             (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
-            sunIcon.classList.add('hidden');
-            moonIcon.classList.remove('hidden');
-            sunIconMobile.classList.add('hidden');
-            moonIconMobile.classList.remove('hidden');
+            if (sunIcon) sunIcon.classList.add('hidden');
+            if (moonIcon) moonIcon.classList.remove('hidden');
+            if (sunIconMobile) sunIconMobile.classList.add('hidden');
+            if (moonIconMobile) moonIconMobile.classList.remove('hidden');
         }
 
-        darkModeToggle?.addEventListener('click', toggleDarkMode);
-        darkModeToggleMobile?.addEventListener('click', toggleDarkMode);
+        if (darkModeToggle) darkModeToggle.addEventListener('click', toggleDarkMode);
+        if (darkModeToggleMobile) darkModeToggleMobile.addEventListener('click', toggleDarkMode);
 
         // ===============================
         // Mobile Menu
@@ -1308,24 +1431,31 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton?.addEventListener('click', function(e) {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-        // Close mobile menu when clicking on links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('hidden');
+                // Toggle aria-expanded for accessibility
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
             });
-        });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (mobileMenu && mobileMenuButton && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close mobile menu when clicking on links
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
 
         // ===============================
         // Back to Top Button
@@ -1356,17 +1486,46 @@
         const jobCards = document.querySelectorAll('.job-card');
         const jobSearch = document.getElementById('job-search');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+        if (filterButtons.length > 0) {
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
 
-                const filterValue = button.getAttribute('data-filter');
+                    const filterValue = button.getAttribute('data-filter');
+
+                    jobCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+
+                        if (filterValue === 'all' || category.includes(filterValue)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }
+
+        // Job Search
+        if (jobSearch) {
+            jobSearch.addEventListener('input', () => {
+                const searchTerm = jobSearch.value.toLowerCase();
 
                 jobCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
                     const category = card.getAttribute('data-category');
 
-                    if (filterValue === 'all' || category.includes(filterValue)) {
+                    if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
                         card.style.display = 'block';
                         setTimeout(() => {
                             card.style.opacity = '1';
@@ -1381,125 +1540,104 @@
                     }
                 });
             });
-        });
-
-        // Job Search
-        jobSearch.addEventListener('input', () => {
-            const searchTerm = jobSearch.value.toLowerCase();
-
-            jobCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-                const category = card.getAttribute('data-category');
-
-                if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
+        }
 
         // ===============================
         // Load More Jobs
         // ===============================
         const loadMoreButton = document.getElementById('load-more-jobs');
 
-        loadMoreButton.addEventListener('click', () => {
-            loadMoreButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Loading...';
-            loadMoreButton.disabled = true;
+        if (loadMoreButton) {
+            loadMoreButton.addEventListener('click', () => {
+                loadMoreButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Loading...';
+                loadMoreButton.disabled = true;
 
-            setTimeout(() => {
-                const jobsContainer = document.getElementById('jobs-container');
-                
-                // Add sample additional jobs
-                const additionalJobs = [
-                    {
-                        id: 5,
-                        category: "engineering remote",
-                        title: "Mobile Developer (React Native)",
-                        salary: "$100k - $140k",
-                        tags: ["Engineering", "Remote"],
-                        location: "Remote • Anywhere",
-                        type: "Full-time",
-                        posted: "Posted 3 weeks ago",
-                        description: "Build cross-platform mobile applications using React Native. Work on features used by millions of users."
-                    },
-                    {
-                        id: 6,
-                        category: "design",
-                        title: "Product Designer",
-                        salary: "$95k - $135k",
-                        tags: ["Design", "Hybrid"],
-                        location: "San Francisco, CA",
-                        type: "Full-time",
-                        posted: "Posted 1 month ago",
-                        description: "Lead product design initiatives from concept to implementation. Conduct user research and create design systems."
-                    }
-                ];
+                setTimeout(() => {
+                    const jobsContainer = document.getElementById('jobs-container');
+                    
+                    // Add sample additional jobs
+                    const additionalJobs = [
+                        {
+                            id: 5,
+                            category: "engineering remote",
+                            title: "Mobile Developer (React Native)",
+                            salary: "$100k - $140k",
+                            tags: ["Engineering", "Remote"],
+                            location: "Remote • Anywhere",
+                            type: "Full-time",
+                            posted: "Posted 3 weeks ago",
+                            description: "Build cross-platform mobile applications using React Native. Work on features used by millions of users."
+                        },
+                        {
+                            id: 6,
+                            category: "design",
+                            title: "Product Designer",
+                            salary: "$95k - $135k",
+                            tags: ["Design", "Hybrid"],
+                            location: "San Francisco, CA",
+                            type: "Full-time",
+                            posted: "Posted 1 month ago",
+                            description: "Lead product design initiatives from concept to implementation. Conduct user research and create design systems."
+                        }
+                    ];
 
-                additionalJobs.forEach(job => {
-                    const jobCard = document.createElement('div');
-                    jobCard.className = 'job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700';
-                    jobCard.setAttribute('data-category', job.category);
+                    additionalJobs.forEach(job => {
+                        const jobCard = document.createElement('div');
+                        jobCard.className = 'job-card bg-white dark:bg-dark-800 rounded-2xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-dark-700';
+                        jobCard.setAttribute('data-category', job.category);
 
-                    jobCard.innerHTML = `
-                        <div class="flex flex-col lg:flex-row lg:items-center justify-between">
-                            <div class="mb-6 lg:mb-0 lg:mr-8">
-                                <div class="flex items-center mb-4">
-                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
-                                        ${job.tags[0]}
-                                    </span>
-                                    <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
-                                        ${job.tags[1]}
-                                    </span>
+                        jobCard.innerHTML = `
+                            <div class="flex flex-col">
+                                <div class="mb-4 md:mb-6">
+                                    <div class="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
+                                        <span class="px-2 md:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm font-medium">
+                                            ${job.tags[0]}
+                                        </span>
+                                        <span class="px-2 md:px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs md:text-sm font-medium">
+                                            ${job.tags[1]}
+                                        </span>
+                                    </div>
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">${job.title}</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-3 md:mb-4 text-sm md:text-base">
+                                        ${job.description}
+                                    </p>
+                                    <div class="job-details-mobile">
+                                        <div class="flex items-center text-gray-500 dark:text-gray-400">
+                                            <i class="fas fa-map-marker-alt mr-2 text-xs md:text-sm"></i>
+                                            <span class="text-xs md:text-sm">${job.location}</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-500 dark:text-gray-400">
+                                            <i class="fas fa-briefcase mr-2 text-xs md:text-sm"></i>
+                                            <span class="text-xs md:text-sm">${job.type}</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-500 dark:text-gray-400">
+                                            <i class="fas fa-clock mr-2 text-xs md:text-sm"></i>
+                                            <span class="text-xs md:text-sm">${job.posted}</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">${job.title}</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    ${job.description}
-                                </p>
-                                <div class="flex flex-wrap gap-4">
-                                    <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                        <i class="fas fa-map-marker-alt mr-2"></i>
-                                        <span>${job.location}</span>
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
+                                    <div class="mb-4 md:mb-0">
+                                        <div class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">${job.salary}</div>
+                                        <div class="text-gray-500 dark:text-gray-400 text-xs md:text-sm">+ equity + benefits</div>
                                     </div>
-                                    <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                        <i class="fas fa-briefcase mr-2"></i>
-                                        <span>${job.type}</span>
-                                    </div>
-                                    <div class="flex items-center text-gray-500 dark:text-gray-400">
-                                        <i class="fas fa-clock mr-2"></i>
-                                        <span>${job.posted}</span>
-                                    </div>
+                                    <button class="apply-job-btn px-4 md:px-6 py-2 md:py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium text-sm md:text-base" data-job-id="${job.id}">
+                                        Apply Now
+                                    </button>
                                 </div>
                             </div>
-                            <div class="flex flex-col items-start lg:items-end">
-                                <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">${job.salary}</div>
-                                <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                                <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="${job.id}">
-                                    Apply Now
-                                </button>
-                            </div>
-                        </div>
-                    `;
+                        `;
 
-                    jobsContainer.appendChild(jobCard);
-                });
+                        jobsContainer.appendChild(jobCard);
+                    });
 
-                loadMoreButton.innerHTML = '<i class="fas fa-sync-alt mr-2"></i> Load More Positions';
-                loadMoreButton.disabled = false;
-                loadMoreButton.style.display = 'none';
+                    loadMoreButton.innerHTML = '<i class="fas fa-sync-alt mr-2"></i> Load More Positions';
+                    loadMoreButton.disabled = false;
+                    loadMoreButton.style.display = 'none';
 
-            }, 1000);
-        });
+                }, 1000);
+            });
+        }
 
         // ===============================
         // Apply Job Buttons
@@ -1507,10 +1645,16 @@
         document.addEventListener('click', function(e) {
             if (e.target.classList.contains('apply-job-btn')) {
                 const jobId = e.target.getAttribute('data-job-id');
-                const jobTitle = e.target.closest('.job-card').querySelector('h3').textContent;
+                const jobCard = e.target.closest('.job-card');
+                const jobTitle = jobCard.querySelector('h3').textContent;
                 
                 // Set the position in the form
-                document.getElementById('app-position').value = jobTitle;
+                const positionSelect = document.getElementById('app-position');
+                positionSelect.value = jobTitle;
+                
+                // Update the application header
+                const applyingFor = document.getElementById('applying-for');
+                applyingFor.textContent = `Apply for: ${jobTitle}`;
                 
                 // Scroll to application form
                 document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
@@ -1524,19 +1668,74 @@
         const resumeUpload = document.getElementById('resume-upload');
         const fileName = document.getElementById('file-name');
 
-        // Click to upload
-        fileUploadArea.addEventListener('click', () => {
-            resumeUpload.click();
-        });
+        if (fileUploadArea && resumeUpload && fileName) {
+            // Click to upload
+            fileUploadArea.addEventListener('click', () => {
+                resumeUpload.click();
+            });
 
-        // Handle file selection
-        resumeUpload.addEventListener('change', function() {
-            if (this.files.length > 0) {
-                const file = this.files[0];
-                fileName.textContent = `Selected file: ${file.name}`;
-                fileName.classList.remove('hidden');
+            // Handle file selection
+            resumeUpload.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    // Validate file size (5MB limit)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('File size must be less than 5MB');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    // Validate file type
+                    const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                    if (!allowedTypes.includes(file.type)) {
+                        alert('Please upload a PDF, DOC, or DOCX file');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    fileName.textContent = `Selected file: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+                    fileName.classList.remove('hidden');
+                }
+            });
+
+            // Drag and drop functionality
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                fileUploadArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
             }
-        });
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                fileUploadArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                fileUploadArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                fileUploadArea.classList.add('dragover');
+            }
+
+            function unhighlight() {
+                fileUploadArea.classList.remove('dragover');
+            }
+
+            fileUploadArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files.length > 0) {
+                    resumeUpload.files = files;
+                    resumeUpload.dispatchEvent(new Event('change'));
+                }
+            }
+        }
 
         // ===============================
         // Application Form Submission with EmailJS
@@ -1547,49 +1746,62 @@
         const appErrorMessage = document.getElementById('app-error-message');
         const submitApplicationBtn = document.getElementById('submit-application');
 
-        applicationForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        if (applicationForm) {
+            applicationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-            // Get form data
-            const formData = {
-                firstName: document.getElementById('app-first-name').value,
-                lastName: document.getElementById('app-last-name').value,
-                email: document.getElementById('app-email').value,
-                phone: document.getElementById('app-phone').value,
-                position: document.getElementById('app-position').value,
-                linkedin: document.getElementById('app-linkedin').value || 'Not provided',
-                portfolio: document.getElementById('app-portfolio').value || 'Not provided',
-                coverLetter: document.getElementById('app-cover-letter').value || 'Not provided',
-                consent: document.getElementById('app-consent').checked
-            };
+                // Get form data
+                const formData = {
+                    firstName: document.getElementById('app-first-name').value,
+                    lastName: document.getElementById('app-last-name').value,
+                    email: document.getElementById('app-email').value,
+                    phone: document.getElementById('app-phone').value,
+                    position: document.getElementById('app-position').value,
+                    linkedin: document.getElementById('app-linkedin').value || 'Not provided',
+                    portfolio: document.getElementById('app-portfolio').value || 'Not provided',
+                    coverLetter: document.getElementById('app-cover-letter').value || 'Not provided',
+                    consent: document.getElementById('app-consent').checked
+                };
 
-            // Basic validation
-            if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.position || !formData.consent) {
-                showAppError('Please fill in all required fields and agree to the consent statement.');
-                return;
-            }
+                // Basic validation
+                if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.position || !formData.consent) {
+                    showAppError('Please fill in all required fields and agree to the consent statement.');
+                    return;
+                }
 
-            if (!validateEmail(formData.email)) {
-                showAppError('Please enter a valid email address.');
-                return;
-            }
+                if (!validateEmail(formData.email)) {
+                    showAppError('Please enter a valid email address.');
+                    return;
+                }
 
-            // Show loading state
-            const originalText = submitApplicationBtn.innerHTML;
-            submitApplicationBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-            submitApplicationBtn.disabled = true;
+                // File validation
+                const fileInput = document.getElementById('resume-upload');
+                if (!fileInput.files.length) {
+                    showAppError('Please upload your resume/CV.');
+                    return;
+                }
 
-            try {
-                // Send email using EmailJS
-                await emailjs.send('service_k7x3zh7', 'template_dba61lt', {
-                    to_email: 'rksaikatkhan999@gmail.com',
-                    from_name: `${formData.firstName} ${formData.lastName}`,
-                    from_email: formData.email,
-                    company: formData.position,
-                    service: 'Job Application',
-                    budget: formData.phone,
-                    message: `
-Job Application Details:
+                // Show loading state
+                const originalText = submitApplicationBtn.innerHTML;
+                submitApplicationBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+                submitApplicationBtn.disabled = true;
+
+                try {
+                    // Send email using EmailJS
+                    // Note: You need to create a service and template in EmailJS
+                    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
+                    const emailParams = {
+                        to_name: 'Team GRK Hiring Team',
+                        from_name: `${formData.firstName} ${formData.lastName}`,
+                        from_email: formData.email,
+                        phone: formData.phone,
+                        position: formData.position,
+                        linkedin: formData.linkedin,
+                        portfolio: formData.portfolio,
+                        cover_letter: formData.coverLetter,
+                        message: `
+New Job Application Received:
+--------------------------------
 Position: ${formData.position}
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
@@ -1599,35 +1811,45 @@ Portfolio: ${formData.portfolio}
 
 Cover Letter:
 ${formData.coverLetter}
-                    `.trim()
-                });
+                        `.trim()
+                    };
 
-                // Show success message
-                applicationSuccess.classList.remove('hidden');
-                applicationError.classList.add('hidden');
+                    // Send email
+                    const response = await emailjs.send(
+                        'service_k7x3zh7', // Your EmailJS Service ID
+                        'template_dba61lt', // Your EmailJS Template ID
+                        emailParams
+                    );
 
-                // Reset form
-                applicationForm.reset();
-                fileName.classList.add('hidden');
+                    console.log('Email sent successfully:', response);
 
-                // Reset button
-                submitApplicationBtn.innerHTML = originalText;
-                submitApplicationBtn.disabled = false;
+                    // Show success message
+                    applicationSuccess.classList.remove('hidden');
+                    applicationError.classList.add('hidden');
 
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    applicationSuccess.classList.add('hidden');
-                }, 5000);
+                    // Reset form
+                    applicationForm.reset();
+                    fileName.classList.add('hidden');
 
-            } catch (error) {
-                console.error('EmailJS Error:', error);
-                showAppError('There was an error submitting your application. Please try again.');
-                
-                // Reset button
-                submitApplicationBtn.innerHTML = originalText;
-                submitApplicationBtn.disabled = false;
-            }
-        });
+                    // Reset button
+                    submitApplicationBtn.innerHTML = originalText;
+                    submitApplicationBtn.disabled = false;
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        applicationSuccess.classList.add('hidden');
+                    }, 5000);
+
+                } catch (error) {
+                    console.error('EmailJS Error:', error);
+                    showAppError('There was an error submitting your application. Please try again or contact us directly.');
+                    
+                    // Reset button
+                    submitApplicationBtn.innerHTML = originalText;
+                    submitApplicationBtn.disabled = false;
+                }
+            });
+        }
 
         // Email validation function
         function validateEmail(email) {
@@ -1640,26 +1862,32 @@ ${formData.coverLetter}
             appErrorMessage.textContent = message;
             applicationError.classList.remove('hidden');
             applicationSuccess.classList.add('hidden');
-            applicationError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Scroll to error message
+            setTimeout(() => {
+                applicationError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
         }
 
         // ===============================
         // Phone number formatting
         // ===============================
         const appPhoneInput = document.getElementById('app-phone');
-        appPhoneInput.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (value.length <= 3) {
-                    value = value;
-                } else if (value.length <= 6) {
-                    value = `(${value.substring(0,3)}) ${value.substring(3)}`;
-                } else {
-                    value = `(${value.substring(0,3)}) ${value.substring(3,6)}-${value.substring(6,10)}`;
+        if (appPhoneInput) {
+            appPhoneInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.length <= 3) {
+                        value = value;
+                    } else if (value.length <= 6) {
+                        value = `(${value.substring(0,3)}) ${value.substring(3)}`;
+                    } else {
+                        value = `(${value.substring(0,3)}) ${value.substring(3,6)}-${value.substring(6,10)}`;
+                    }
                 }
-            }
-            e.target.value = value;
-        });
+                e.target.value = value;
+            });
+        }
 
         // ===============================
         // Smooth scrolling for anchor links
@@ -1672,13 +1900,19 @@ ${formData.coverLetter}
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
 
                     // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
         });
@@ -1744,6 +1978,30 @@ ${formData.coverLetter}
                     }, index * 100 + 400);
                 });
             }, 300);
+        });
+
+        // ===============================
+        // Fix for EmailJS Configuration
+        // ===============================
+        // Check if EmailJS is properly initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('EmailJS initialized:', typeof emailjs !== 'undefined');
+            
+            // You can test EmailJS connection here
+            // Uncomment the following lines to test EmailJS
+            /*
+            emailjs.send("service_k7x3zh7","template_dba61lt",{
+                from_name: "Test User",
+                from_email: "test@example.com",
+                message: "Test message",
+                to_name: "Team GRK"
+            })
+            .then(function(response) {
+                console.log('EmailJS test successful:', response.status, response.text);
+            }, function(error) {
+                console.log('EmailJS test failed:', error);
+            });
+            */
         });
     </script>
 </body>
