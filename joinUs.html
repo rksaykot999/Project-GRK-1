@@ -8,7 +8,7 @@
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function () {
+        (function() {
             emailjs.init('xlITaD_8kgTUvb1-z');
         })();
     </script>
@@ -90,142 +90,90 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
-        :root {
-            --navbar-height: 64px;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                position: fixed;
-                top: 0;
-                left: 0;
-            }
-
-            body {
-                padding-top: var(--navbar-height);
-            }
-        }
-
-        /* Prevent animation bugs */
-        .navbar,
-        .navbar * {
-            transform: none !important;
-        }
-
-        .mobile-menu-fix {
-            position: fixed;
-            top: var(--navbar-height);
-            left: 0;
-            right: 0;
-            z-index: 999;
-            padding: 0 1rem;
-        }
-
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
+        
         .dark .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
-
+        
         .gradient-text {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .dark .gradient-text {
             background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-      
+        
         .job-card {
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                box-shadow 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
         }
-
+        
         .job-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
-
+        
         .dark .job-card:hover {
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
-
-        /* Disable hover jump on touch devices */
-        @media (hover: none) {
-            .job-card:hover {
-                transform: none;
-                box-shadow: none;
-            }
-        }
         
         .benefit-card {
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
-
+        
         .benefit-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .filter-btn {
             transition: all 0.3s ease;
         }
-
+        
         .filter-btn.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
+            color: white;
         }
-
+        
         .dark .filter-btn.active {
             background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-            color: #ffffff;
+            color: white;
         }
-
         
         .file-upload-area {
             border: 2px dashed #cbd5e1;
             transition: all 0.3s ease;
         }
-
+        
         .dark .file-upload-area {
             border-color: #475569;
         }
-
+        
         .file-upload-area:hover,
         .file-upload-area.dragover {
             border-color: #667eea;
             background-color: rgba(102, 126, 234, 0.05);
         }
-
+        
         .dark .file-upload-area:hover,
         .dark .file-upload-area.dragover {
             border-color: #60a5fa;
             background-color: rgba(96, 165, 250, 0.1);
         }
-
+        
         .application-step {
             position: relative;
             transition: all 0.3s ease;
         }
-
+        
         @media (min-width: 768px) {
             .application-step::before {
                 content: '';
@@ -235,16 +183,24 @@
                 width: 30px;
                 height: 2px;
                 background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-                transform: translateY(-50%);
             }
-
+            
             .dark .application-step::before {
                 background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 100%);
             }
-
+            
             .application-step:first-child::before {
                 display: none;
             }
+        }
+        
+        .mobile-menu-fix {
+            position: fixed;
+            top: 4rem;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            margin: 0 1rem;
         }
     </style>
 </head>
@@ -264,46 +220,33 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <ul class="flex space-x-8">
-                        <li><a href="index.html"
-                                class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Home
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                            </a></li>
-                        <li><a href="about.html"
-                                class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">About
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                            </a></li>
-                        <li><a href="projects.html"
-                                class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Projects
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                            </a></li>
-                        <li><a href="services.html"
-                                class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Services
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                            </a></li>
-                        <li><a href="blog.html"
-                                class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Blog
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                            </a></li>
+                        <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Home
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">About
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Projects
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Services
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Blog
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
                     </ul>
                     <div class="flex items-center space-x-4">
                         <!-- Dark Mode Toggle -->
-                        <button id="darkModeToggle"
-                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-300">
+                        <button id="darkModeToggle" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-300">
                             <i id="sunIcon" class="fas fa-sun text-yellow-500 hidden"></i>
                             <i id="moonIcon" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
                         </button>
-
-                        <a href="contact.html"
-                            class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
+                        
+                        <a href="contact.html" class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
                             Contact Us
                         </a>
-                        <a href="joinUs.html"
-                            class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
+                        <a href="joinUs.html" class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
                             Join Us
                         </a>
                     </div>
@@ -311,48 +254,32 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center space-x-4">
-                    <button id="darkModeToggleMobile"
-                        class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-300">
+                    <button id="darkModeToggleMobile" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-300">
                         <i id="sunIconMobile" class="fas fa-sun text-yellow-500 hidden"></i>
                         <i id="moonIconMobile" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
                     </button>
-                    <button id="mobile-menu-button"
-                        class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
+                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile Navigation -->
-            <div id="mobile-menu"
-                class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg mobile-menu-fix">
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg mobile-menu-fix">
                 <ul class="space-y-4 px-4">
-                    <li><a href="index.html"
-                            class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Home</a>
-                    </li>
-                    <li><a href="about.html"
-                            class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">About</a>
-                    </li>
-                    <li><a href="projects.html"
-                            class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Projects</a>
-                    </li>
-                    <li><a href="services.html"
-                            class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Services</a>
-                    </li>
-                    <li><a href="blog.html"
-                            class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Blog</a>
-                    </li>
+                    <li><a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Home</a></li>
+                    <li><a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">About</a></li>
+                    <li><a href="projects.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Projects</a></li>
+                    <li><a href="services.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Services</a></li>
+                    <li><a href="blog.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Blog</a></li>
                 </ul>
                 <div class="mt-6 space-y-3 px-4">
-                    <a href="contact.html"
-                        class="block w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300 text-center">
+                    <a href="contact.html" class="block w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300 text-center">
                         Contact Us
                     </a>
-                    <a href="joinUs.html"
-                        class="block w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 text-center">
+                    <a href="joinUs.html" class="block w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 text-center">
                         Join Us
                     </a>
                 </div>
@@ -369,17 +296,13 @@
                     Join Our <span class="gradient-text">Team</span>
                 </h1>
                 <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
-                    Build the future with us. We're looking for passionate innovators, creative thinkers, and problem
-                    solvers to join our growing team.
+                    Build the future with us. We're looking for passionate innovators, creative thinkers, and problem solvers to join our growing team.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
-                    style="animation-delay: 0.4s;">
-                    <a href="#open-positions"
-                        class="px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.4s;">
+                    <a href="#open-positions" class="px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
                         <i class="fas fa-briefcase mr-2"></i> View Open Positions
                     </a>
-                    <a href="#culture"
-                        class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium">
+                    <a href="#culture" class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium">
                         <i class="fas fa-users mr-2"></i> Our Culture
                     </a>
                 </div>
@@ -411,25 +334,21 @@
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why <span
-                        class="gradient-text">Team GRK?</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why <span class="gradient-text">Team GRK?</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    We're not just building products - we're building a community of innovators who are passionate about
-                    making a difference.
+                    We're not just building products - we're building a community of innovators who are passionate about making a difference.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Benefit 1 -->
-                <div
-                    class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up">
+                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up">
                     <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
                         <i class="fas fa-rocket text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Impactful Work</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-6">
-                        Work on projects that matter. We solve real-world problems for clients across industries, from
-                        healthcare to finance to education.
+                        Work on projects that matter. We solve real-world problems for clients across industries, from healthcare to finance to education.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
@@ -444,16 +363,13 @@
                 </div>
 
                 <!-- Benefit 2 -->
-                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up"
-                    style="animation-delay: 0.1s;">
-                    <div
-                        class="w-16 h-16 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
+                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-graduation-cap text-2xl text-green-600 dark:text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Continuous Growth</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-6">
-                        We invest in your development with mentorship programs, learning budgets, and opportunities to
-                        work with cutting-edge technologies.
+                        We invest in your development with mentorship programs, learning budgets, and opportunities to work with cutting-edge technologies.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
@@ -468,16 +384,13 @@
                 </div>
 
                 <!-- Benefit 3 -->
-                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up"
-                    style="animation-delay: 0.2s;">
-                    <div
-                        class="w-16 h-16 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6">
+                <div class="benefit-card bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-balance-scale text-2xl text-purple-600 dark:text-purple-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Work-Life Balance</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-6">
-                        Flexible hours, remote work options, and unlimited PTO. We believe that happy team members do
-                        their best work.
+                        Flexible hours, remote work options, and unlimited PTO. We believe that happy team members do their best work.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
@@ -498,8 +411,7 @@
     <section id="culture" class="py-16 md:py-24 bg-gray-50 dark:bg-dark-800/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span
-                        class="gradient-text">Culture</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Culture</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     We've built a culture of collaboration, innovation, and respect where everyone can thrive.
                 </p>
@@ -509,11 +421,9 @@
                 <div class="animate-fade-in">
                     <div class="relative">
                         <div class="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                                alt="Our Team Culture" class="w-full h-64 md:h-80 object-cover">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Our Team Culture" class="w-full h-64 md:h-80 object-cover">
                         </div>
-                        <div
-                            class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg max-w-xs animate-bounce-in">
+                        <div class="absolute -bottom-6 -right-6 bg-white dark:bg-dark-800 p-6 rounded-xl shadow-lg max-w-xs animate-bounce-in">
                             <div class="flex items-center space-x-3 mb-3">
                                 <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
                                     <i class="fas fa-heart text-white"></i>
@@ -530,49 +440,42 @@
                     <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
                                     <i class="fas fa-lightbulb text-blue-600 dark:text-blue-400"></i>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Innovation First</h4>
                                 <p class="text-gray-600 dark:text-gray-400">
-                                    We encourage experimentation and creative thinking. Every team member has a voice in
-                                    how we approach problems and build solutions.
+                                    We encourage experimentation and creative thinking. Every team member has a voice in how we approach problems and build solutions.
                                 </p>
                             </div>
                         </div>
 
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-4">
+                                <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-4">
                                     <i class="fas fa-hands-helping text-green-600 dark:text-green-400"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Collaborative
-                                    Environment</h4>
+                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Collaborative Environment</h4>
                                 <p class="text-gray-600 dark:text-gray-400">
-                                    Cross-functional teams work together to deliver exceptional results. We believe the
-                                    best solutions come from diverse perspectives.
+                                    Cross-functional teams work together to deliver exceptional results. We believe the best solutions come from diverse perspectives.
                                 </p>
                             </div>
                         </div>
 
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-4">
                                     <i class="fas fa-chart-line text-purple-600 dark:text-purple-400"></i>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Career Growth</h4>
                                 <p class="text-gray-600 dark:text-gray-400">
-                                    Clear career paths, mentorship programs, and opportunities to take on leadership
-                                    roles regardless of seniority.
+                                    Clear career paths, mentorship programs, and opportunities to take on leadership roles regardless of seniority.
                                 </p>
                             </div>
                         </div>
@@ -583,8 +486,7 @@
             <!-- Culture Values -->
             <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <div
-                        class="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-bullseye text-3xl text-blue-600 dark:text-blue-400"></i>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Purpose Driven</h4>
@@ -592,8 +494,7 @@
                 </div>
 
                 <div class="text-center">
-                    <div
-                        class="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-users text-3xl text-green-600 dark:text-green-400"></i>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Inclusive</h4>
@@ -601,8 +502,7 @@
                 </div>
 
                 <div class="text-center">
-                    <div
-                        class="w-20 h-20 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-shield-alt text-3xl text-purple-600 dark:text-purple-400"></i>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Transparent</h4>
@@ -610,8 +510,7 @@
                 </div>
 
                 <div class="text-center">
-                    <div
-                        class="w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mx-auto mb-4">
+                    <div class="w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-balance-scale text-3xl text-orange-600 dark:text-orange-400"></i>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Balanced</h4>
@@ -625,8 +524,7 @@
     <section id="open-positions" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Open <span
-                        class="gradient-text">Positions</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Open <span class="gradient-text">Positions</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     Browse our current openings and find the perfect role for your skills and aspirations.
                 </p>
@@ -635,37 +533,26 @@
             <!-- Job Filters -->
             <div class="mb-12">
                 <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <button
-                        class="filter-btn active px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400"
-                        data-filter="all">
+                    <button class="filter-btn active px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="all">
                         All Positions
                     </button>
-                    <button
-                        class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400"
-                        data-filter="engineering">
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="engineering">
                         Engineering
                     </button>
-                    <button
-                        class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400"
-                        data-filter="design">
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="design">
                         Design
                     </button>
-                    <button
-                        class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400"
-                        data-filter="business">
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="business">
                         Business
                     </button>
-                    <button
-                        class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400"
-                        data-filter="remote">
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg hover:border-primary-600 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400" data-filter="remote">
                         Remote
                     </button>
                 </div>
 
                 <!-- Search Bar -->
                 <div class="max-w-md mx-auto relative">
-                    <input type="text" id="job-search" placeholder="Search positions, skills, or keywords..."
-                        class="w-full px-6 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <input type="text" id="job-search" placeholder="Search positions, skills, or keywords..." class="w-full px-6 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
                 </div>
             </div>
@@ -673,25 +560,20 @@
             <!-- Job Listings -->
             <div class="space-y-6" id="jobs-container">
                 <!-- Job 1 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up"
-                    data-category="engineering remote">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="engineering remote">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between">
                         <div class="mb-6 lg:mb-0 lg:mr-8">
                             <div class="flex items-center mb-4">
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
                                     Engineering
                                 </span>
-                                <span
-                                    class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
+                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
                                     Remote
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Senior Frontend Developer
-                            </h3>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Senior Frontend Developer</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                Build beautiful, responsive user interfaces using React, TypeScript, and modern web
-                                technologies.
+                                Build beautiful, responsive user interfaces using React, TypeScript, and modern web technologies.
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
@@ -711,9 +593,7 @@
                         <div class="flex flex-col items-start lg:items-end">
                             <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$120k - $160k</div>
                             <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                            <button
-                                class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium"
-                                data-job-id="1">
+                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="1">
                                 Apply Now
                             </button>
                         </div>
@@ -721,24 +601,20 @@
                 </div>
 
                 <!-- Job 2 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up"
-                    data-category="design" style="animation-delay: 0.1s;">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="design" style="animation-delay: 0.1s;">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between">
                         <div class="mb-6 lg:mb-0 lg:mr-8">
                             <div class="flex items-center mb-4">
-                                <span
-                                    class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium mr-3">
+                                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium mr-3">
                                     Design
                                 </span>
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                                     On-site
                                 </span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">UI/UX Designer</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                Create intuitive and beautiful user experiences for web and mobile applications. Work
-                                closely with product and engineering teams.
+                                Create intuitive and beautiful user experiences for web and mobile applications. Work closely with product and engineering teams.
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
@@ -758,9 +634,7 @@
                         <div class="flex flex-col items-start lg:items-end">
                             <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$90k - $130k</div>
                             <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                            <button
-                                class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium"
-                                data-job-id="2">
+                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="2">
                                 Apply Now
                             </button>
                         </div>
@@ -768,25 +642,20 @@
                 </div>
 
                 <!-- Job 3 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up"
-                    data-category="engineering remote" style="animation-delay: 0.2s;">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="engineering remote" style="animation-delay: 0.2s;">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between">
                         <div class="mb-6 lg:mb-0 lg:mr-8">
                             <div class="flex items-center mb-4">
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium mr-3">
                                     Engineering
                                 </span>
-                                <span
-                                    class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
+                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
                                     Remote
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Backend Engineer (Node.js)
-                            </h3>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Backend Engineer (Node.js)</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                Build scalable APIs and microservices using Node.js, TypeScript, and cloud technologies.
-                                Focus on performance and reliability.
+                                Build scalable APIs and microservices using Node.js, TypeScript, and cloud technologies. Focus on performance and reliability.
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
@@ -806,9 +675,7 @@
                         <div class="flex flex-col items-start lg:items-end">
                             <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$110k - $150k</div>
                             <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ equity + benefits</div>
-                            <button
-                                class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium"
-                                data-job-id="3">
+                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="3">
                                 Apply Now
                             </button>
                         </div>
@@ -816,25 +683,20 @@
                 </div>
 
                 <!-- Job 4 -->
-                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up"
-                    data-category="business" style="animation-delay: 0.3s;">
+                <div class="job-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-dark-700 animate-scale-up" data-category="business" style="animation-delay: 0.3s;">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between">
                         <div class="mb-6 lg:mb-0 lg:mr-8">
                             <div class="flex items-center mb-4">
-                                <span
-                                    class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium mr-3">
+                                <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium mr-3">
                                     Business
                                 </span>
-                                <span
-                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                                     Hybrid
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Business Development
-                                Manager</h3>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Business Development Manager</h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                Drive growth through strategic partnerships and client acquisition. Identify new market
-                                opportunities and build lasting relationships.
+                                Drive growth through strategic partnerships and client acquisition. Identify new market opportunities and build lasting relationships.
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center text-gray-500 dark:text-gray-400">
@@ -854,9 +716,7 @@
                         <div class="flex flex-col items-start lg:items-end">
                             <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">$100k - $140k</div>
                             <div class="text-gray-500 dark:text-gray-400 text-sm mb-6">+ commission + benefits</div>
-                            <button
-                                class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium"
-                                data-job-id="4">
+                            <button class="apply-job-btn px-6 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium" data-job-id="4">
                                 Apply Now
                             </button>
                         </div>
@@ -866,8 +726,7 @@
 
             <!-- Load More Button -->
             <div class="text-center mt-12">
-                <button id="load-more-jobs"
-                    class="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-all duration-300 font-medium">
+                <button id="load-more-jobs" class="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-all duration-300 font-medium">
                     <i class="fas fa-sync-alt mr-2"></i> Load More Positions
                 </button>
             </div>
@@ -878,27 +737,21 @@
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-dark-800/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span
-                        class="gradient-text">Process</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Process</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    We've designed our hiring process to be transparent, respectful, and efficient. Here's what you can
-                    expect.
+                    We've designed our hiring process to be transparent, respectful, and efficient. Here's what you can expect.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-4 gap-8 relative">
                 <!-- Process Line -->
-                <div
-                    class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-300 dark:bg-dark-700 transform translate-y-6">
-                </div>
+                <div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-300 dark:bg-dark-700 transform translate-y-6"></div>
 
                 <!-- Step 1 -->
                 <div class="application-step text-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full gradient-bg flex items-center justify-center mx-auto mb-6 relative z-10">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full gradient-bg flex items-center justify-center mx-auto mb-6 relative z-10">
                         <i class="fas fa-file-alt text-2xl md:text-3xl text-white"></i>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
                             <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">01</span>
                         </div>
                     </div>
@@ -910,11 +763,9 @@
 
                 <!-- Step 2 -->
                 <div class="application-step text-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
                         <i class="fas fa-phone text-2xl md:text-3xl text-green-600 dark:text-green-400"></i>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
                             <span class="text-green-600 dark:text-green-400 font-bold text-sm">02</span>
                         </div>
                     </div>
@@ -926,11 +777,9 @@
 
                 <!-- Step 3 -->
                 <div class="application-step text-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
                         <i class="fas fa-laptop-code text-2xl md:text-3xl text-purple-600 dark:text-purple-400"></i>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
                             <span class="text-purple-600 dark:text-purple-400 font-bold text-sm">03</span>
                         </div>
                     </div>
@@ -942,11 +791,9 @@
 
                 <!-- Step 4 -->
                 <div class="application-step text-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-6 relative z-10">
                         <i class="fas fa-users text-2xl md:text-3xl text-blue-600 dark:text-blue-400"></i>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
+                        <div class="absolute -top-2 -right-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white dark:bg-dark-800 flex items-center justify-center">
                             <span class="text-blue-600 dark:text-blue-400 font-bold text-sm">04</span>
                         </div>
                     </div>
@@ -965,8 +812,7 @@
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white">Typical Timeline</h4>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400">
-                        Our hiring process typically takes 2-3 weeks from application to offer. We provide feedback at
-                        every stage and keep you informed throughout the process.
+                        Our hiring process typically takes 2-3 weeks from application to offer. We provide feedback at every stage and keep you informed throughout the process.
                     </p>
                 </div>
             </div>
@@ -977,8 +823,7 @@
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Life at <span
-                        class="gradient-text">GRK</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Life at <span class="gradient-text">GRK</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     Hear from our team members about what it's like to work at Team GRK.
                 </p>
@@ -989,8 +834,7 @@
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
                     <div class="flex items-center mb-6">
                         <div class="w-14 h-14 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                alt="David Chen" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="David Chen" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900 dark:text-white">David Chen</h4>
@@ -998,8 +842,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 italic mb-6">
-                        "What I love most about GRK is the trust and autonomy we're given. I get to work on challenging
-                        problems with cutting-edge technologies while having the freedom to explore new approaches."
+                        "What I love most about GRK is the trust and autonomy we're given. I get to work on challenging problems with cutting-edge technologies while having the freedom to explore new approaches."
                     </p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
@@ -1014,8 +857,7 @@
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
                     <div class="flex items-center mb-6">
                         <div class="w-14 h-14 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                alt="Priya Sharma" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Priya Sharma" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900 dark:text-white">Priya Sharma</h4>
@@ -1023,8 +865,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 italic mb-6">
-                        "The collaborative culture here is amazing. Designers, developers, and product managers work
-                        together seamlessly. I've grown more in two years here than in my previous five years combined."
+                        "The collaborative culture here is amazing. Designers, developers, and product managers work together seamlessly. I've grown more in two years here than in my previous five years combined."
                     </p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
@@ -1039,8 +880,7 @@
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
                     <div class="flex items-center mb-6">
                         <div class="w-14 h-14 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                                alt="Marcus Johnson" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Marcus Johnson" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900 dark:text-white">Marcus Johnson</h4>
@@ -1048,9 +888,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 italic mb-6">
-                        "The work-life balance here is real. As a remote employee, I have the flexibility to work when
-                        I'm most productive while still being part of an amazing team that values collaboration and
-                        innovation."
+                        "The work-life balance here is real. As a remote employee, I have the flexibility to work when I'm most productive while still being part of an amazing team that values collaboration and innovation."
                     </p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
@@ -1068,27 +906,23 @@
     <section class="py-16 md:py-24 bg-gray-50 dark:bg-dark-800/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Benefits & <span
-                        class="gradient-text">Perks</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Benefits & <span class="gradient-text">Perks</span></h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    We take care of our team with comprehensive benefits and unique perks that support your health,
-                    growth, and happiness.
+                    We take care of our team with comprehensive benefits and unique perks that support your health, growth, and happiness.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Benefit 1 -->
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div
-                        class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-heartbeat text-2xl text-blue-600 dark:text-blue-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Health & Wellness</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Comprehensive medical, dental, and
-                                vision</span>
+                            <span class="text-gray-700 dark:text-gray-300">Comprehensive medical, dental, and vision</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
@@ -1103,8 +937,7 @@
 
                 <!-- Benefit 2 -->
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div
-                        class="w-14 h-14 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-graduation-cap text-2xl text-green-600 dark:text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Learning & Development</h3>
@@ -1126,8 +959,7 @@
 
                 <!-- Benefit 3 -->
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div
-                        class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-home text-2xl text-purple-600 dark:text-purple-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Work Environment</h3>
@@ -1149,8 +981,7 @@
 
                 <!-- Benefit 4 -->
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div
-                        class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-umbrella-beach text-2xl text-orange-600 dark:text-orange-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Time Off</h3>
@@ -1172,8 +1003,7 @@
 
                 <!-- Benefit 5 -->
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div
-                        class="w-14 h-14 rounded-xl bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-money-bill-wave text-2xl text-pink-600 dark:text-pink-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Financial Benefits</h3>
@@ -1195,8 +1025,7 @@
 
                 <!-- Benefit 6 -->
                 <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg">
-                    <div
-                        class="w-14 h-14 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-6">
+                    <div class="w-14 h-14 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-6">
                         <i class="fas fa-pizza-slice text-2xl text-yellow-600 dark:text-yellow-400"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Fun & Community</h3>
@@ -1224,18 +1053,15 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to <span
-                            class="gradient-text">Apply?</span></h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to <span class="gradient-text">Apply?</span></h2>
                     <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Submit your application for the selected position. We'll review it and get back to you within 5
-                        business days.
+                        Submit your application for the selected position. We'll review it and get back to you within 5 business days.
                     </p>
                 </div>
 
                 <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-2xl">
                     <div id="job-application-header" class="mb-8">
-                        <h3 id="applying-for" class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Apply for
-                            Position</h3>
+                        <h3 id="applying-for" class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Apply for Position</h3>
                         <p id="application-instructions" class="text-gray-600 dark:text-gray-400">
                             Please fill out the form below and upload your resume. Fields marked with * are required.
                         </p>
@@ -1244,47 +1070,29 @@
                     <form id="application-form-content" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label for="app-first-name"
-                                    class="block text-gray-700 dark:text-gray-300 font-medium mb-2">First Name *</label>
-                                <input type="text" id="app-first-name"
-                                    class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                    required>
+                                <label for="app-first-name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">First Name *</label>
+                                <input type="text" id="app-first-name" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
                             </div>
                             <div>
-                                <label for="app-last-name"
-                                    class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Last Name *</label>
-                                <input type="text" id="app-last-name"
-                                    class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                    required>
+                                <label for="app-last-name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Last Name *</label>
+                                <input type="text" id="app-last-name" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
                             </div>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label for="app-email"
-                                    class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address
-                                    *</label>
-                                <input type="email" id="app-email"
-                                    class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                    required>
+                                <label for="app-email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address *</label>
+                                <input type="email" id="app-email" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
                             </div>
                             <div>
-                                <label for="app-phone"
-                                    class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number
-                                    *</label>
-                                <input type="tel" id="app-phone"
-                                    class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                    required>
+                                <label for="app-phone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number *</label>
+                                <input type="tel" id="app-phone" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
                             </div>
                         </div>
 
                         <div>
-                            <label for="app-position"
-                                class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Position Applying For
-                                *</label>
-                            <select id="app-position"
-                                class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                required>
+                            <label for="app-position" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Position Applying For *</label>
+                            <select id="app-position" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
                                 <option value="">Select a position</option>
                                 <option value="Senior Frontend Developer">Senior Frontend Developer</option>
                                 <option value="UI/UX Designer">UI/UX Designer</option>
@@ -1294,31 +1102,22 @@
                         </div>
 
                         <div>
-                            <label for="app-linkedin"
-                                class="block text-gray-700 dark:text-gray-300 font-medium mb-2">LinkedIn Profile</label>
-                            <input type="url" id="app-linkedin"
-                                class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                placeholder="https://linkedin.com/in/yourprofile">
+                            <label for="app-linkedin" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">LinkedIn Profile</label>
+                            <input type="url" id="app-linkedin" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="https://linkedin.com/in/yourprofile">
                         </div>
 
                         <div>
-                            <label for="app-portfolio"
-                                class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Portfolio/GitHub
-                                URL</label>
-                            <input type="url" id="app-portfolio"
-                                class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                placeholder="https://github.com/yourusername or https://yourportfolio.com">
+                            <label for="app-portfolio" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Portfolio/GitHub URL</label>
+                            <input type="url" id="app-portfolio" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="https://github.com/yourusername or https://yourportfolio.com">
                         </div>
 
                         <!-- File Upload -->
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Resume/CV *</label>
-                            <div id="file-upload-area"
-                                class="file-upload-area p-8 rounded-lg text-center cursor-pointer">
+                            <div id="file-upload-area" class="file-upload-area p-8 rounded-lg text-center cursor-pointer">
                                 <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
                                 <p class="text-gray-600 dark:text-gray-400 mb-2">
-                                    <span class="font-medium text-primary-600 dark:text-primary-400">Click to
-                                        upload</span> or drag and drop
+                                    <span class="font-medium text-primary-600 dark:text-primary-400">Click to upload</span> or drag and drop
                                 </p>
                                 <p class="text-gray-500 dark:text-gray-500 text-sm">
                                     PDF, DOC, DOCX up to 5MB
@@ -1329,45 +1128,33 @@
                         </div>
 
                         <div>
-                            <label for="app-cover-letter"
-                                class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Cover Letter</label>
-                            <textarea id="app-cover-letter" rows="4"
-                                class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                                placeholder="Tell us why you're interested in this position and what makes you a great fit..."></textarea>
+                            <label for="app-cover-letter" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Cover Letter</label>
+                            <textarea id="app-cover-letter" rows="4" class="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-gray-300 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Tell us why you're interested in this position and what makes you a great fit..."></textarea>
                         </div>
 
                         <div class="flex items-center">
-                            <input type="checkbox" id="app-consent"
-                                class="w-4 h-4 text-primary-600 bg-gray-100 dark:bg-dark-700 border-gray-300 dark:border-dark-600 rounded focus:ring-primary-500 focus:ring-2"
-                                required>
+                            <input type="checkbox" id="app-consent" class="w-4 h-4 text-primary-600 bg-gray-100 dark:bg-dark-700 border-gray-300 dark:border-dark-600 rounded focus:ring-primary-500 focus:ring-2" required>
                             <label for="app-consent" class="ml-2 text-gray-700 dark:text-gray-300 text-sm">
                                 I consent to Team GRK storing and processing my personal data for recruitment purposes *
                             </label>
                         </div>
 
-                        <div id="application-success"
-                            class="hidden p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg">
+                        <div id="application-success" class="hidden p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg">
                             <i class="fas fa-check-circle mr-2"></i>
-                            Thank you! Your application has been submitted successfully. We'll review it and get back to
-                            you soon.
+                            Thank you! Your application has been submitted successfully. We'll review it and get back to you soon.
                         </div>
 
-                        <div id="application-error"
-                            class="hidden p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg">
+                        <div id="application-error" class="hidden p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg">
                             <i class="fas fa-exclamation-circle mr-2"></i>
-                            <span id="app-error-message">There was an error submitting your application. Please try
-                                again.</span>
+                            <span id="app-error-message">There was an error submitting your application. Please try again.</span>
                         </div>
 
-                        <button type="submit" id="submit-application"
-                            class="w-full px-6 py-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl flex items-center justify-center">
+                        <button type="submit" id="submit-application" class="w-full px-6 py-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl flex items-center justify-center">
                             <i class="fas fa-paper-plane mr-2"></i> Submit Application
                         </button>
 
                         <p class="text-gray-500 dark:text-gray-400 text-sm text-center">
-                            Need help with your application? <a href="contact.html"
-                                class="text-primary-600 dark:text-primary-400 hover:underline">Contact our talent
-                                team</a>
+                            Need help with your application? <a href="contact.html" class="text-primary-600 dark:text-primary-400 hover:underline">Contact our talent team</a>
                         </p>
                     </form>
                 </div>
@@ -1378,30 +1165,23 @@
     <!-- Don't See Your Role? -->
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-                class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
+            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
                 <!-- Background elements -->
-                <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2">
-                </div>
-                <div
-                    class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3">
-                </div>
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
 
                 <div class="relative z-10 max-w-3xl mx-auto text-center">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
                         Don't See Your Perfect Role?
                     </h2>
                     <p class="text-blue-100 mb-8 text-lg">
-                        We're always looking for talented people. Send us your resume and we'll keep you in mind for
-                        future opportunities.
+                        We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#application-form"
-                            class="px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                        <a href="#application-form" class="px-8 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
                             <i class="fas fa-paper-plane mr-2"></i> Submit General Application
                         </a>
-                        <a href="contact.html"
-                            class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium">
+                        <a href="contact.html" class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all duration-300 font-medium">
                             <i class="fas fa-envelope mr-2"></i> Contact Talent Team
                         </a>
                     </div>
@@ -1419,24 +1199,19 @@
                         <h3 class="text-2xl font-bold">GRK</h3>
                     </a>
                     <p class="text-gray-400 mb-6 max-w-md">
-                        We create innovative digital solutions that transform businesses and deliver exceptional user
-                        experiences through cutting-edge technology.
+                        We create innovative digital solutions that transform businesses and deliver exceptional user experiences through cutting-edge technology.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
                             <i class="fab fa-dribbble"></i>
                         </a>
                     </div>
@@ -1444,32 +1219,19 @@
                 <div>
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
-                        <li><a href="about.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
-                        <li><a href="projects.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">Our Projects</a>
-                        </li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors duration-300">Our Projects</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">Web
-                                Development</a></li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a>
-                        </li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a>
-                        </li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white transition-colors duration-300">Digital
-                                Consulting</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Digital Consulting</a></li>
                     </ul>
                 </div>
                 <div>
@@ -1497,8 +1259,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop"
-        class="fixed bottom-8 right-8 w-12 h-12 rounded-full gradient-bg text-white shadow-2xl hover:shadow-3xl transition-all duration-300 opacity-0 invisible flex items-center justify-center z-40">
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full gradient-bg text-white shadow-2xl hover:shadow-3xl transition-all duration-300 opacity-0 invisible flex items-center justify-center z-40">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -1529,7 +1290,7 @@
 
         // Initial theme load
         const savedTheme = localStorage.getItem('darkMode');
-        if (savedTheme === 'enabled' ||
+        if (savedTheme === 'enabled' || 
             (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             sunIcon.classList.add('hidden');
@@ -1547,13 +1308,13 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton?.addEventListener('click', function (e) {
+        mobileMenuButton?.addEventListener('click', function(e) {
             e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
         });
 
         // Close mobile menu when clicking outside
-        document.addEventListener('click', function (event) {
+        document.addEventListener('click', function(event) {
             if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
@@ -1658,7 +1419,7 @@
 
             setTimeout(() => {
                 const jobsContainer = document.getElementById('jobs-container');
-
+                
                 // Add sample additional jobs
                 const additionalJobs = [
                     {
@@ -1743,14 +1504,14 @@
         // ===============================
         // Apply Job Buttons
         // ===============================
-        document.addEventListener('click', function (e) {
+        document.addEventListener('click', function(e) {
             if (e.target.classList.contains('apply-job-btn')) {
                 const jobId = e.target.getAttribute('data-job-id');
                 const jobTitle = e.target.closest('.job-card').querySelector('h3').textContent;
-
+                
                 // Set the position in the form
                 document.getElementById('app-position').value = jobTitle;
-
+                
                 // Scroll to application form
                 document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
             }
@@ -1769,7 +1530,7 @@
         });
 
         // Handle file selection
-        resumeUpload.addEventListener('change', function () {
+        resumeUpload.addEventListener('change', function() {
             if (this.files.length > 0) {
                 const file = this.files[0];
                 fileName.textContent = `Selected file: ${file.name}`;
@@ -1861,7 +1622,7 @@ ${formData.coverLetter}
             } catch (error) {
                 console.error('EmailJS Error:', error);
                 showAppError('There was an error submitting your application. Please try again.');
-
+                
                 // Reset button
                 submitApplicationBtn.innerHTML = originalText;
                 submitApplicationBtn.disabled = false;
@@ -1892,9 +1653,9 @@ ${formData.coverLetter}
                 if (value.length <= 3) {
                     value = value;
                 } else if (value.length <= 6) {
-                    value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+                    value = `(${value.substring(0,3)}) ${value.substring(3)}`;
                 } else {
-                    value = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6, 10)}`;
+                    value = `(${value.substring(0,3)}) ${value.substring(3,6)}-${value.substring(6,10)}`;
                 }
             }
             e.target.value = value;
@@ -1904,7 +1665,7 @@ ${formData.coverLetter}
         // Smooth scrolling for anchor links
         // ===============================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
 
@@ -1986,5 +1747,4 @@ ${formData.coverLetter}
         });
     </script>
 </body>
-
 </html>
