@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | GRK Project - Innovating the Future</title>
+    <title>About Us | Team GRK - Innovating the Future</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -40,8 +40,6 @@
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'slide-in': 'slide-in 0.6s ease-out',
                         'fade-in-up': 'fade-in-up 0.8s ease-out',
                         'scale-in': 'scale-in 0.5s ease-out',
                     },
@@ -49,10 +47,6 @@
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'slide-in': {
-                            '0%': { transform: 'translateX(-100px)', opacity: 0 },
-                            '100%': { transform: 'translateX(0)', opacity: 1 },
                         },
                         'fade-in-up': {
                             '0%': { transform: 'translateY(30px)', opacity: 0 },
@@ -65,7 +59,6 @@
                     },
                     fontFamily: {
                         'lato': ['Lato', 'sans-serif'],
-                        'manrope': ['Manrope', 'sans-serif'],
                     }
                 }
             }
@@ -74,27 +67,11 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/code.png">
     <style>
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .dark .glass-effect {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .dark .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-        
         .gradient-text {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
@@ -167,6 +144,14 @@
             animation: float 8s ease-in-out infinite;
             animation-delay: 1s;
         }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
     </style>
 </head>
 
@@ -177,7 +162,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="Event.html" class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white">GRK</h3>
                     </a>
                 </div>
@@ -185,13 +170,21 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <ul class="flex space-x-8">
-                        <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Home</a></li>
+                        <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Home
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
                         <li><a href="about.html" class="text-primary-600 dark:text-primary-400 font-medium relative group">About
                             <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"></span>
                         </a></li>
-                        <li><a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Projects</a></li>
-                        <li><a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Services</a></li>
-                        <li><a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Blog</a></li>
+                        <li><a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Projects
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Services
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300 relative group">Blog
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
                     </ul>
                     <div class="flex items-center space-x-4">
                         <!-- Dark Mode Toggle -->
@@ -200,12 +193,12 @@
                             <i id="moonIcon" class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
                         </button>
                         
-                        <button class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
+                        <a href="contact.html" class="px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-colors duration-300 font-medium">
                             Contact Us
-                        </button>
-                        <button class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
+                        </a>
+                        <a href="joinUs.html" class="px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 font-medium">
                             Join Us
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -224,7 +217,7 @@
             </div>
 
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg animate-slide-in">
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 py-4 rounded-lg mt-2 shadow-lg">
                 <ul class="space-y-4 px-4">
                     <li><a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Home</a></li>
                     <li><a href="about.html" class="block text-primary-600 dark:text-primary-400 font-medium py-2">About</a></li>
@@ -233,12 +226,12 @@
                     <li><a href="blog.html" class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium py-2">Blog</a></li>
                 </ul>
                 <div class="mt-6 space-y-3 px-4">
-                    <button class="w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300">
+                    <a href="contact.html" class="block w-full px-6 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors duration-300 text-center">
                         Contact Us
-                    </button>
-                    <button class="w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300">
+                    </a>
+                    <a href="joinUs.html" class="block w-full px-6 py-2 gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity duration-300 text-center">
                         Join Us
-                    </button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -253,7 +246,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
-                    About <span class="gradient-text">GRK Project</span>
+                    About <span class="gradient-text">Team GRK</span>
                 </h1>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s;">
                     We are a passionate team of innovators, designers, and developers dedicated to transforming ideas into impactful digital solutions that drive business growth.
@@ -329,7 +322,7 @@
                                 <div class="text-sm text-primary-600 dark:text-primary-400 font-semibold mb-2">2020</div>
                                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">The Beginning</h3>
                                 <p class="text-gray-600 dark:text-gray-400">
-                                    GRK Project was founded by three passionate developers with a shared vision to create meaningful digital solutions. Starting from a small co-working space, we took on our first client project.
+                                    Team GRK was founded by three passionate developers with a shared vision to create meaningful digital solutions. Starting from a small co-working space, we took on our first client project.
                                 </p>
                             </div>
                         </div>
@@ -400,7 +393,7 @@
                                 <div class="text-sm text-primary-600 dark:text-primary-400 font-semibold mb-2">2024 & Beyond</div>
                                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Today & Future</h3>
                                 <p class="text-gray-600 dark:text-gray-400">
-                                    Currently serving 50+ clients globally with a team of 25+ experts. Expanding into emerging technologies like AI, blockchain, and IoT while maintaining our commitment to ethical innovation.
+                                    Currently serving 50+ clients globally with a team of 25+ experts. Expanding into emerging technologies while maintaining our commitment to ethical innovation.
                                 </p>
                             </div>
                         </div>
@@ -531,7 +524,7 @@
                 <!-- Team Member 2 -->
                 <div class="bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg team-card">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w-800&q=80" 
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                              alt="Sarah Chen" 
                              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
@@ -619,12 +612,12 @@
                         Whether you're looking to collaborate on a project, join our team, or just learn more about what we do, we'd love to connect with you.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="px-8 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+                        <a href="joinUs.html" class="px-8 py-3 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
                             <i class="fas fa-briefcase mr-2"></i> Career Opportunities
-                        </button>
-                        <button class="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-all duration-300 font-medium">
+                        </a>
+                        <a href="contact.html" class="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-dark-800 transition-all duration-300 font-medium">
                             <i class="fas fa-handshake mr-2"></i> Partnership Inquiry
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -636,11 +629,8 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">G</span>
-                        </div>
-                        <h3 class="text-2xl font-bold">GRK<span class="gradient-text">.</span></h3>
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <h3 class="text-2xl font-bold">GRK</h3>
                     </a>
                     <p class="text-gray-400 mb-6 max-w-md">
                         We create innovative digital solutions that transform businesses and deliver exceptional user experiences through cutting-edge technology.
@@ -664,7 +654,7 @@
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
-                        <li><a href="about.html" class="text-white font-medium">About Us</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
                         <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors duration-300">Our Projects</a></li>
                         <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
                     </ul>
@@ -672,10 +662,10 @@
                 <div>
                     <h4 class="text-lg font-bold mb-4">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Digital Consulting</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Digital Consulting</a></li>
                     </ul>
                 </div>
                 <div>
@@ -683,21 +673,21 @@
                     <ul class="space-y-3">
                         <li class="text-gray-400 flex items-center">
                             <i class="fas fa-envelope mr-3 text-primary-400"></i>
-                            contact@grkproject.com
+                            contact@teamgrk.com
                         </li>
                         <li class="text-gray-400 flex items-center">
                             <i class="fas fa-phone mr-3 text-primary-400"></i>
-                            +1 (555) 123-4567
+                            +8801981736667
                         </li>
                         <li class="text-gray-400 flex items-center">
                             <i class="fas fa-map-marker-alt mr-3 text-primary-400"></i>
-                            123 Innovation St.
+                            Team GRK, Gazipur, Dhaka.
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 GRK Project. All rights reserved. | <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></p>
+                <p>&copy; 2026 Team GRK. All rights reserved. | <a href="privacyPolicy.html" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="terms.html" class="hover:text-white transition-colors duration-300">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -754,14 +744,13 @@
         
         darkModeToggle.addEventListener('click', toggleDarkMode);
         darkModeToggleMobile.addEventListener('click', toggleDarkMode);
-        
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('animate-slide-in');
         });
         
         // Close mobile menu when clicking outside
@@ -811,21 +800,6 @@
             });
         });
         
-        // Add scroll animation for elements
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate-fade-in-up, .animate-scale-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0) scale(1)';
-                }
-            });
-        }
-        
         // Set initial state for animated elements
         document.querySelectorAll('.animate-fade-in-up').forEach(element => {
             element.style.opacity = '0';
@@ -839,11 +813,8 @@
             element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         });
         
-        window.addEventListener('scroll', animateOnScroll);
+        // Trigger animations on page load
         window.addEventListener('load', () => {
-            animateOnScroll();
-            
-            // Trigger animations on page load with delays
             setTimeout(() => {
                 document.querySelectorAll('.animate-fade-in-up').forEach((el, index) => {
                     setTimeout(() => {
@@ -859,6 +830,13 @@
                     }, index * 200 + 300);
                 });
             }, 300);
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
     </script>
 </body>
